@@ -1,0 +1,108 @@
+"use client";
+
+import { Box, Container, Typography, Button, Grid } from "@mui/material";
+import Image from "next/image";
+
+export default function ApplyBanner() {
+  const deepBlue = '#00008b';
+
+  return (
+    <Box sx={{ py: { xs: 8, md: 15 }, bgcolor: '#fff', position: 'relative', overflow: 'hidden', minHeight: '700px' }}>
+      {/* Blue Background Plate - Fixed dimensions as per user request */}
+      <Box sx={{
+        position: 'absolute',
+        top: '50%',
+        left: 0,
+        transform: 'translateY(-50%)',
+        width: { xs: '100%', md: '950px' },
+        height: { xs: 'auto', md: '560px' },
+        bgcolor: deepBlue,
+        borderTopRightRadius: '15px',
+        borderBottomRightRadius: '15px',
+        zIndex: 0,
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' viewBox='0 0 1440 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,160 C320,300 640,-100 1440,160 L1440,400 L0,400 Z' fill='none' stroke='white' stroke-opacity='0.1' stroke-width='3'/%3E%3C/svg%3E")`,
+        backgroundSize: 'cover'
+      }} />
+
+      <Container maxWidth="xl" sx={{ position: 'relative', zIndex: 1, minHeight: '560px', display: 'flex', alignItems: 'center' }}>
+        {/* Absolute Image - Specific positioning as per user request */}
+        <Box sx={{
+          position: 'absolute',
+          left: { md: '920px' },
+          top: '50%',
+          transform: 'translateY(-50%)',
+          width: { xs: '100%', md: '760px' },
+          height: { xs: '350px', md: '400px' },
+          borderRadius: '15px',
+          overflow: 'hidden',
+          boxShadow: '0 30px 60px rgba(0,0,0,0.3)',
+          border: '10px solid #fff',
+          backgroundColor: '#fff',
+          display: { xs: 'none', md: 'block' },
+          zIndex: 2
+        }}>
+          <img
+            src="/images/uk-banner.jpg"
+            alt="UK London Skyline"
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          />
+        </Box>
+
+        <Grid container alignItems="center">
+          {/* Left Content */}
+          <Grid size={{ xs: 12, md: 7 }}>
+            <Box sx={{
+              color: '#fff',
+              maxWidth: '1000px',
+              pl: { md: 8 }, // Added left padding for better spacing
+              py: { xs: 4, md: 8 }, // Added vertical padding
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 3
+            }}>
+              <Typography variant="h2" sx={{
+                fontWeight: 900,
+                fontSize: { xs: '32px', md: '48px' }, // Slightly adjusted for better fit
+                fontFamily: 'var(--font-heading)',
+                lineHeight: 1.1,
+                letterSpacing: '-0.02em',
+                color: '#fff'
+              }}>
+                A UK degree that opens global doors.
+              </Typography>
+              <Typography variant="body1" sx={{
+                color: 'rgba(255, 255, 255, 0.95)', // Increased visibility
+                fontSize: '16px',
+                lineHeight: 1.8,
+                fontFamily: 'var(--font-sans)',
+                maxWidth: '750px'
+              }}>
+                We guide Pakistani students to cheap universities in uk for international students,
+                offering affordable tuition, recognised degrees, visa support, scholarships,
+                career outcomes, and a UK education that builds confidence, credibility,
+                and global opportunities for worldwide success.
+              </Typography>
+              <Box sx={{ mt: 2 }}>
+                <Button variant="contained" sx={{
+                  bgcolor: '#fff',
+                  color: deepBlue,
+                  px: 5,
+                  py: 1.8,
+                  borderRadius: '12px',
+                  fontWeight: 800,
+                  textTransform: 'none',
+                  fontSize: '16px',
+                  boxShadow: '0 10px 20px rgba(0,0,0,0.2)',
+                  '&:hover': { bgcolor: '#f5f5f5', transform: 'translateY(-2px)' },
+                  transition: 'all 0.3s'
+                }}>
+                  Talk With Our Experts
+                </Button>
+              </Box>
+            </Box>
+          </Grid>
+        </Grid>
+      </Container>
+    </Box>
+  );
+}

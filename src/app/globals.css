@@ -1,0 +1,238 @@
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --header-blue: #00008b;
+  --header-green: #06C106;
+  --text-blue: #2e3192;
+  --muted: #64748b;
+  --font-sans: var(--font-dm-sans), Inter, sans-serif;
+  --font-heading: var(--font-gabarito), serif;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: 58px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  padding-top: 105px; /* Precisely matches header height */
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Header Styles */
+.top-bar {
+  background: #fff;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  display: block;
+}
+
+.main-header {
+  background: var(--header-blue);
+  padding: 12px 0;
+  color: #fff;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 400;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  opacity: 0.8;
+}
+
+.nav-link.active {
+  background: var(--header-green);
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+.btn-appointment {
+  background: var(--header-green);
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.social-icon {
+  color: #06C106; /* Default Green */
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.social-icon:hover {
+  color: var(--header-blue); /* Hover Blue */
+  transform: translateY(-2px);
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-blue);
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 400;
+}
+
+/* Responsiveness Classes */
+.navbar-logo {
+  height: auto;
+  width: 200px;
+}
+
+.desktop-nav {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.desktop-btn {
+  display: block;
+}
+
+.mobile-toggle {
+  display: none;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.mobile-nav {
+  display: none;
+  background: var(--header-blue);
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  z-index: 99;
+}
+
+.mobile-nav.open {
+  display: block;
+}
+
+.mobile-nav nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.mobile-nav .nav-link {
+  font-size: 18px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mobile-btn {
+  margin-top: 10px;
+  display: inline-block;
+  text-align: center;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+  .nav-link {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .top-bar {
+    display: none;
+  }
+  
+  body {
+    padding-top: 64px; /* Perfectly aligns mobile content with header */
+  }
+
+  .desktop-nav, .desktop-btn {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-logo {
+    width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-logo {
+    width: 120px;
+  }
+  
+  .main-header {
+    padding: 10px 0;
+  }
+}
+
+/* Base UI */
+p { color: var(--muted); }
+.badge { display: inline-block; padding: 4px 12px; border-radius: 20px; background: #f0fdf4; color: #166534; font-size: 12px; font-weight: 600; margin-bottom: 1rem; }
+.glass-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+.grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
