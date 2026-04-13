@@ -32,49 +32,62 @@ export default function AboutPartnerSection({ reverse = false }: { reverse?: boo
                   width: '100%',
                   height: '4px',
                   bgcolor: greenColor,
-                  borderRadius: '10px'
+                  borderRadius: '0px'
                 }} />
               </span>
             </Typography>
 
-            <Typography variant="body1" sx={{ 
-              color: '#555', 
-              fontSize: '16px', 
-              lineHeight: 1.8, 
+            <Typography variant="body1" sx={{
+              color: '#555',
+              fontSize: '16px',
               mb: 4,
               fontFamily: 'var(--font-sans)',
-              maxWidth: '550px'
             }}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sagittis nulla eu nisi 
-              efficitur, dictum consectetur elit vehicula. Aenean urna turpis, rutrum sed eros id, 
-              volutpat hendrerit ipsum. Duis est urna, efficitur sollicitudin nibh id, varius 
-              scelerisque nulla. Quisque malesuada arcu semper, ornare massa eget, malesuada 
-              est. Sed hendrerit, libero a lacinia placerat, velit dui vulputate elit, a tincidunt odio 
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sagittis nulla eu nisi
+              efficitur, dictum consectetur elit vehicula. Aenean urna turpis, rutrum sed eros id,
+              volutpat hendrerit ipsum. Duis est urna, efficitur sollicitudin nibh id, varius
+              scelerisque nulla. Quisque malesuada arcu semper, ornare massa eget, malesuada
+              est. Sed hendrerit, libero a lacinia placerat, velit dui vulputate elit, a tincidunt odio
               dolor eget metus.
             </Typography>
 
-            <Grid container spacing={2} sx={{ mb: 5 }}>
+            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: '91px', mb: 5 }}>
               {[
                 { label: "Professional Team" },
                 { label: "24/7 Customer Support" }
               ].map((item, i) => (
-                <Grid key={i} size={{ xs: 12, sm: 6 }}>
-                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
-                    <FaCheckCircle style={{ color: deepBlue, fontSize: '20px' }} />
-                    <Typography sx={{ 
-                      fontWeight: 600, 
-                      color: '#333', 
-                      fontFamily: 'var(--font-sans)',
-                      fontSize: '16px'
-                    }}>
-                      {item.label}
-                    </Typography>
-                  </Box>
-                </Grid>
+                <Box key={i} sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
+                  <FaCheckCircle style={{ color: deepBlue, fontSize: '20px' }} />
+                  <Typography sx={{
+                    fontWeight: 600,
+                    color: '#333',
+                    fontFamily: 'var(--font-sans)',
+                    fontSize: '16px'
+                  }}>
+                    {item.label}
+                  </Typography>
+                </Box>
               ))}
-            </Grid>
+            </Box>
 
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
+              <Button
+                component={Link}
+                href="/about"
+                variant="contained" sx={{
+                  bgcolor: greenColor,
+                  color: '#fff',
+                  px: 5,
+                  py: 1.8,
+                  borderRadius: '8px',
+                  fontWeight: 700,
+                  fontSize: '16px',
+                  textTransform: 'none',
+                  textDecoration: 'none',
+                  '&:hover': { bgcolor: '#05a805' }
+                }}>
+                View More
+              </Button>
               <Button variant="contained" sx={{
                 bgcolor: deepBlue,
                 color: '#fff',
@@ -88,28 +101,6 @@ export default function AboutPartnerSection({ reverse = false }: { reverse?: boo
               }}>
                 Call Now
               </Button>
-              {reverse && (
-                <Button 
-                component={Link}
-                href="/about"
-                variant="outlined" sx={{
-                  borderColor: deepBlue,
-                  color: deepBlue,
-                  px: 5,
-                  py: 1.8,
-                  borderRadius: '8px',
-                  fontWeight: 700,
-                  fontSize: '16px',
-                  textTransform: 'none',
-                  textDecoration: 'none',
-                  '&:hover': { 
-                    bgcolor: 'rgba(3, 3, 140, 0.04)',
-                    borderColor: '#02026b'
-                  }
-                }}>
-                  About More
-                </Button>
-              )}
             </Box>
           </Grid>
 
@@ -125,7 +116,7 @@ export default function AboutPartnerSection({ reverse = false }: { reverse?: boo
                 bottom: '10%',
                 border: `2px solid ${greenColor}`,
                 zIndex: 0,
-                borderRadius: '24px'
+                borderRadius: '0px'
               }} />
 
               {/* Top Left Image */}
@@ -140,7 +131,7 @@ export default function AboutPartnerSection({ reverse = false }: { reverse?: boo
                 boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
                 zIndex: 2
               }}>
-                <img 
+                <img
                   src="/images/service1.jpg" // Using available images
                   alt="Student Consultant"
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
@@ -160,7 +151,7 @@ export default function AboutPartnerSection({ reverse = false }: { reverse?: boo
                 zIndex: 1,
                 border: '8px solid #fff'
               }}>
-                <img 
+                <img
                   src="/images/uk-banner.jpg" // Using available banner
                   alt="Global Education"
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}

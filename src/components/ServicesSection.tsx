@@ -54,7 +54,7 @@ export default function ServicesSection() {
   return (
     <Box sx={{ py: 8, bgcolor: '#f8faff' }}>
       <Container maxWidth="xl">
-        <Box sx={{ textAlign: 'center', mb: 8 }}>
+        <Box sx={{ textAlign: 'center', mb: '35px' }}>
           <Typography variant="h2" sx={{
             fontWeight: 800,
             fontSize: '48px',
@@ -85,7 +85,9 @@ export default function ServicesSection() {
           {services.map((s, i) => (
             <Grid key={i} size={{ xs: 12, sm: 6, md: 3 }}>
               <Paper elevation={0} sx={{
-                borderRadius: '16px',
+                borderTopLeftRadius: '10px',
+                borderTopRightRadius: '10px',
+                borderRadius: '10px',
                 overflow: 'hidden',
                 height: '100%',
                 display: 'flex',
@@ -129,10 +131,10 @@ export default function ServicesSection() {
                   flexDirection: 'column',
                   gap: 1
                 }}>
-                  <Typography variant="h6" sx={{ fontWeight: 700, fontSize: '18px', fontFamily: 'var(--font-heading)' }}>
+                  <Typography variant="h6" sx={{ fontWeight: 700, fontSize: '22px', fontFamily: 'var(--font-heading)' }}>
                     {s.title}
                   </Typography>
-                  <Typography variant="body2" sx={{ color: '#fff', opacity: 0.8, fontSize: '14px', lineHeight: 1.5, fontFamily: 'var(--font-sans)' }}>
+                  <Typography variant="body2" sx={{ color: '#fff', opacity: 0.8, fontSize: '18px', lineHeight: 1.5, fontFamily: 'var(--font-sans)', mt: 1 }}>
                     {s.desc}
                   </Typography>
                 </Box>

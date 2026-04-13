@@ -14,22 +14,22 @@ const features = [
   {
     title: "High Visa Success Rate",
     description: "Best Student Visa Consultant delivering high approval rates through experience, accurate case assessment.",
-    icon: <FaCheckCircle size={28} />
+    icon: "/choose us/icon 1.svg"
   },
   {
     title: "Personalized Guidance",
     description: "Best Student Visa Consultant offering personalized guidance tailored to Pakistani students academic background.",
-    icon: <FaUserGraduate size={28} />
+    icon: "/choose us/icon 2.svg"
   },
   {
     title: "Recognized University Partners",
     description: "Best Student Visa Consultant connected with recognized universities, ensuring admissions and trusted offers.",
-    icon: <FaUniversity size={28} />
+    icon: "/choose us/icon 3.svg"
   },
   {
     title: "Honest, Transparent Guidance",
     description: "Best Student Visa Consultant known for honest, transparent guidance and long-term student success.",
-    icon: <FaHandshake size={28} />
+    icon: "/choose us/icon 4.svg"
   }
 ];
 
@@ -107,10 +107,12 @@ function StatCounter({ value, suffix, label, hasBorder }: { value: number, suffi
         {count}{suffix}
       </Typography>
       <Typography variant="body1" sx={{
-        opacity: 0.9,
-        fontWeight: 600,
-        fontSize: '16px',
-        fontFamily: 'var(--font-sans)',
+        fontWeight: 400,
+        fontSize: '22px',
+        fontFamily: 'var(--font-dm-sans)',
+        lineHeight: '100%',
+        letterSpacing: '0.2px',
+        textAlign: 'center',
         color: '#fff'
       }}>
         {label}
@@ -161,7 +163,13 @@ function FeatureIcon({ icon }: { icon: React.ReactNode }) {
         alignItems: 'center',
         justifyContent: 'center'
       }}>
-        {icon}
+        <Image 
+          src={icon as string} 
+          alt="icon" 
+          width={40} 
+          height={40} 
+          style={{ objectFit: 'contain' }}
+        />
       </Box>
     </Box>
   );
@@ -190,7 +198,7 @@ export default function WhyChooseUs() {
       }} />
 
       <Container maxWidth="xl" sx={{ position: 'relative', zIndex: 1 }}>
-        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 8, flexWrap: 'wrap', gap: 4 }}>
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 0, flexWrap: 'wrap', gap: 4 }}>
           <Box>
             <Typography variant="h2" sx={{
               fontWeight: 800,
@@ -200,7 +208,7 @@ export default function WhyChooseUs() {
             }}>
               Why Choose Us
             </Typography>
-            <Typography variant="body1" sx={{ color: "white", opacity: 0.8, maxWidth: '500px', fontSize: '16px', fontFamily: 'var(--font-sans)' }}>
+            <Typography variant="body1" sx={{ color: "white", maxWidth: '500px', fontSize: '16px', fontFamily: 'var(--font-sans)' }}>
               We are the Best Student Visa Consultant delivering trust, transparency, strong results and student-focused guidance.
             </Typography>
           </Box>
@@ -218,8 +226,8 @@ export default function WhyChooseUs() {
           </Button>
         </Box>
 
-        <Grid container spacing={6} alignItems="center">
-          <Grid size={{ xs: 12, md: 6 }}>
+        <Grid container spacing={6} alignItems="center" sx={{ mt: -4 }}>
+          <Grid size={{ xs: 12, md: 5 }}>
             <Stack spacing={3}>
               {features.map((feature, i) => (
                 <Paper key={i} elevation={0} sx={{
@@ -247,7 +255,7 @@ export default function WhyChooseUs() {
             </Stack>
           </Grid>
 
-          <Grid size={{ xs: 12, md: 6 }}>
+          <Grid size={{ xs: 12, md: 7 }}>
             <Box sx={{
               position: 'relative',
               borderRadius: '24px',

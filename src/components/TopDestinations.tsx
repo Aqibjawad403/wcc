@@ -3,16 +3,22 @@
 import { Box, Container, Typography, Grid, Button } from "@mui/material";
 import Image from "next/image";
 
-const destinations = [
-  { name: "United Kingdom (UK)", flag: "https://flagcdn.com/w80/gb.png", image: "/images/service1.jpg" },
-  { name: "United State of America (USA)", flag: "https://flagcdn.com/w80/us.png", image: "/images/service2.jpg" },
-  { name: "Canada (CA)", flag: "https://flagcdn.com/w80/ca.png", image: "/images/service3.jpg" },
-  { name: "Australia", flag: "https://flagcdn.com/w80/au.png", image: "/images/uk-banner.jpg" },
-  { name: "Cyprus", flag: "https://flagcdn.com/w80/cy.png", image: "/images/service1.jpg" },
-  { name: "North Cyprus", flag: "https://flagcdn.com/w80/cy.png", image: "/images/service2.jpg" },
-  { name: "Germany", flag: "https://flagcdn.com/w80/de.png", image: "/images/service3.jpg" },
-  { name: "Malta", flag: "https://flagcdn.com/w80/mt.png", image: "/images/uk-banner.jpg" },
+const countries = [
+  { name: "United Kingdom", flagCode: "gb" },
+  { name: "USA", flagCode: "us" },
+  { name: "Canada", flagCode: "ca" },
+  { name: "Australia", flagCode: "au" },
+  { name: "Cyprus", flagCode: "cy" },
+  { name: "North Cyprus", flagCode: "cy" },
+  { name: "Germany", flagCode: "de" },
+  { name: "Malta", flagCode: "mt" },
 ];
+
+const destinations = countries.map((country, i) => ({
+  name: country.name,
+  flag: `https://flagcdn.com/w80/${country.flagCode}.png`,
+  image: `/home/Worldwide country/img ${i + 1}.svg`
+}));
 
 export default function TopDestinations() {
   const greenColor = '#06C106';
@@ -63,10 +69,10 @@ export default function TopDestinations() {
               <Box sx={{
                 position: 'relative',
                 height: '240px',
-                borderRadius: '16px',
+                borderRadius: '10px',
                 overflow: 'hidden',
                 cursor: 'pointer',
-                '&:hover .destination-overlay': { bgcolor: 'rgba(0,0,0,0.3)' },
+                '&:hover .destination-overlay': { bgcolor: 'rgba(3, 3, 140, 0.45)' },
                 '&:hover .destination-img': { transform: 'scale(1.1)' }
               }}>
                 {/* Background Image */}
@@ -76,13 +82,13 @@ export default function TopDestinations() {
                     width: '100%',
                     height: '100%',
                     transition: 'transform 0.5s ease',
-                    backgroundImage: `url(${city.image})`,
+                    backgroundImage: `url("${city.image}")`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center'
                   }}
                 />
                 
-                {/* Overlay */}
+                {/* Overlay - Rectangle Layer */}
                 <Box 
                   className="destination-overlay"
                   sx={{
@@ -91,7 +97,7 @@ export default function TopDestinations() {
                     left: 0,
                     right: 0,
                     bottom: 0,
-                    bgcolor: 'rgba(0,0,0,0.15)',
+                    bgcolor: '#03038C4D',
                     display: 'flex',
                     alignItems: 'flex-end',
                     padding: 2.5,
@@ -139,7 +145,7 @@ export default function TopDestinations() {
             px: 6,
             py: 1.5,
             borderRadius: '8px',
-            fontWeight: 700,
+            fontWeight: 500,
             fontSize: '16px',
             textTransform: 'none',
             '&:hover': { bgcolor: '#05a805' }

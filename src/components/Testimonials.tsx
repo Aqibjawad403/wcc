@@ -40,13 +40,12 @@ export default function Testimonials() {
   return (
     <Box sx={{ bgcolor: '#f8f9ff', py: 12 }}>
       <Container maxWidth="xl">
-        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 6 }}>
-          <Box sx={{ maxWidth: '650px' }}>
-            <Typography variant="h2" sx={{ 
-              fontWeight: 800, 
-              fontSize: '48px', 
+        <Box sx={{ mb: 6 }}>
+          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
+            <Typography variant="h2" sx={{
+              fontWeight: 800,
+              fontSize: '48px',
               fontFamily: 'var(--font-heading)',
-              mb: 2,
               color: '#1a1a1a'
             }}>
               Our Success <span style={{ position: 'relative' }}>
@@ -62,32 +61,37 @@ export default function Testimonials() {
                 }} />
               </span>
             </Typography>
-            <Typography variant="body1" sx={{ 
-              color: '#666', 
-              lineHeight: 1.6,
-              fontFamily: 'var(--font-sans)',
-              opacity: 0.8
-            }}>
-              Our success stories reflect results achieved by the Best Student Visa Consultant in Bahria Town Lahore, 
-              helping Pakistani students secure visas, admissions, and global education opportunities with confidence.
-            </Typography>
+            <Stack direction="row" spacing={2.5}>
+              <IconButton sx={{
+                bgcolor: '#ccc',
+                color: '#fff',
+                width: '50px',
+                height: '50px',
+                '&:hover': { bgcolor: '#bbb' }
+              }}>
+                <FaArrowLeft size={20} />
+              </IconButton>
+              <IconButton sx={{
+                bgcolor: greenColor,
+                color: '#fff',
+                width: '50px',
+                height: '50px',
+                '&:hover': { bgcolor: '#05a805' }
+              }}>
+                <FaArrowRight size={20} />
+              </IconButton>
+            </Stack>
           </Box>
-          <Stack direction="row" spacing={2}>
-            <IconButton sx={{ 
-              bgcolor: '#ccc', 
-              color: '#fff', 
-              '&:hover': { bgcolor: '#bbb' } 
-            }}>
-              <FaArrowLeft size={16} />
-            </IconButton>
-            <IconButton sx={{ 
-              bgcolor: greenColor, 
-              color: '#fff', 
-              '&:hover': { bgcolor: '#05a805' } 
-            }}>
-              <FaArrowRight size={16} />
-            </IconButton>
-          </Stack>
+          <Typography variant="body1" sx={{
+            color: '#666',
+            lineHeight: 1.6,
+            fontFamily: 'var(--font-sans)',
+            opacity: 0.8,
+            maxWidth: '650px'
+          }}>
+            Our success stories reflect results achieved by the Best Student Visa Consultant in Bahria Town Lahore,
+            helping Pakistani students secure visas, admissions, and global education opportunities with confidence.
+          </Typography>
         </Box>
 
         <Grid container spacing={4}>
@@ -114,7 +118,8 @@ export default function Testimonials() {
                   lineHeight: 1.7, 
                   fontFamily: 'var(--font-sans)',
                   mb: 4,
-                  flexGrow: 1
+                  flexGrow: 1,
+                  textAlign: 'justify'
                 }}>
                   {t.text}
                 </Typography>
@@ -126,7 +131,7 @@ export default function Testimonials() {
                     <Avatar 
                       src={t.image} 
                       alt={t.name}
-                      sx={{ width: 44, height: 44, border: '2px solid #eee' }}
+                      sx={{ width: 44, height: 44, border: `2px solid ${greenColor}` }}
                     />
                     <Box>
                       <Typography variant="subtitle2" sx={{ fontWeight: 800, color: '#1a1a1a', fontSize: '15px' }}>
@@ -139,7 +144,7 @@ export default function Testimonials() {
                   </Stack>
                   <Box sx={{ position: 'relative', width: 70, height: 25 }}>
                    <Image 
-                    src="/images/google-logo.png" 
+                    src="/google.svg" 
                     alt="Google" 
                     fill 
                     style={{ objectFit: 'contain' }}

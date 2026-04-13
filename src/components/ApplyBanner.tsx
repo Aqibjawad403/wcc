@@ -20,8 +20,9 @@ export default function ApplyBanner() {
         borderTopRightRadius: '15px',
         borderBottomRightRadius: '15px',
         zIndex: 0,
-        backgroundImage: `url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' viewBox='0 0 1440 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,160 C320,300 640,-100 1440,160 L1440,400 L0,400 Z' fill='none' stroke='white' stroke-opacity='0.1' stroke-width='3'/%3E%3C/svg%3E")`,
-        backgroundSize: 'cover'
+        backgroundImage: `url("/bgImage.svg")`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
       }} />
 
       <Container maxWidth="xl" sx={{ position: 'relative', zIndex: 1, minHeight: '560px', display: 'flex', alignItems: 'center' }}>
@@ -61,7 +62,7 @@ export default function ApplyBanner() {
               gap: 3
             }}>
               <Typography variant="h2" sx={{
-                fontWeight: 900,
+                fontWeight: 600,
                 fontSize: { xs: '32px', md: '48px' }, // Slightly adjusted for better fit
                 fontFamily: 'var(--font-heading)',
                 lineHeight: 1.1,
@@ -89,14 +90,14 @@ export default function ApplyBanner() {
                   px: 5,
                   py: 1.8,
                   borderRadius: '12px',
-                  fontWeight: 800,
+                  fontWeight: 400,
                   textTransform: 'none',
                   fontSize: '16px',
                   boxShadow: '0 10px 20px rgba(0,0,0,0.2)',
                   '&:hover': { bgcolor: '#f5f5f5', transform: 'translateY(-2px)' },
                   transition: 'all 0.3s'
                 }}>
-                  Talk With Our Experts
+                  Talk with our experts
                 </Button>
               </Box>
             </Box>

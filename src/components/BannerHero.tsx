@@ -34,7 +34,7 @@ export default function BannerHero() {
               opacity: 0.9,
               fontSize: '18px',
               maxWidth: '600px',
-              color: '#fff',
+              color: 'white',
               fontFamily: 'var(--font-sans)'
             }}>
               Choose the best study abroad consultant in Lahore, guiding Pakistani students
@@ -54,17 +54,17 @@ export default function BannerHero() {
                 Talk With Our Experts
               </Button>
               <Button variant="outlined" sx={{
-                color: '#fff',
+                color: '#03038C',
                 borderColor: '#fff',
+                bgcolor: "white",
                 px: 4,
                 py: 1.5,
                 borderRadius: '8px',
                 fontWeight: 700,
                 textTransform: 'none',
                 gap: 1,
-                '&:hover': { bgcolor: 'rgba(255,255,255,0.1)', borderColor: '#fff' }
               }}>
-                Explore Services <FaArrowRight />
+                Explore Services <img src="/arrow.svg" />
               </Button>
             </Box>
           </Grid>
@@ -82,7 +82,8 @@ export default function BannerHero() {
               <Typography variant="h5" sx={{
                 mb: 3,
                 fontWeight: 700,
-                textAlign: 'center',
+                fontSize: "34px",
+                textAlign: 'left',
                 color: '#06C106',
                 fontFamily: 'var(--font-heading)'
               }}>
