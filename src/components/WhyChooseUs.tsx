@@ -200,7 +200,7 @@ export default function WhyChooseUs() {
             }}>
               Why Choose Us
             </Typography>
-            <Typography variant="body1" sx={{ opacity: 0.8, maxWidth: '500px', fontSize: '16px', fontFamily: 'var(--font-sans)' }}>
+            <Typography variant="body1" sx={{ color: "white", opacity: 0.8, maxWidth: '500px', fontSize: '16px', fontFamily: 'var(--font-sans)' }}>
               We are the Best Student Visa Consultant delivering trust, transparency, strong results and student-focused guidance.
             </Typography>
           </Box>

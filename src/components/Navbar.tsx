@@ -1,14 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import {
-  FaPinterestP,
-  FaTiktok,
-  FaFacebookF,
-  FaTwitter,
-  FaInstagram,
-  FaYoutube
-} from "react-icons/fa";
 import { MdOutlineWatchLater, MdLocationOn } from "react-icons/md";
 import { Container } from "@mui/material";
 
@@ -16,6 +8,15 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+
+const socialLinks = [
+  { name: "Pinterest", icon: "/social icons/pinterest.svg", url: "#" },
+  { name: "TikTok", icon: "/social icons/tiktok.svg", url: "#" },
+  { name: "Facebook", icon: "/social icons/fb.svg", url: "#" },
+  { name: "Twitter", icon: "/social icons/twitter.svg", url: "#" },
+  { name: "Instagram", icon: "/social icons/insta.svg", url: "#" },
+  { name: "YouTube", icon: "/social icons/youtube.svg", url: "#" },
+];
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -30,18 +31,15 @@ export default function Navbar() {
   };
 
   return (
-    <header style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100 }}>
+    <header style={{ height: "90px", position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100 }}>
       {/* Top Bar */}
       <div className="top-bar">
         <Container maxWidth="xl" sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           {/* Social Icons - Left Side */}
           <div className="social-icons">
-            <SocialIcon Icon={FaPinterestP} />
-            <SocialIcon Icon={FaTiktok} />
-            <SocialIcon Icon={FaFacebookF} />
-            <SocialIcon Icon={FaTwitter} />
-            <SocialIcon Icon={FaInstagram} />
-            <SocialIcon Icon={FaYoutube} />
+            {socialLinks.map((social) => (
+              <SocialIcon key={social.name} src={social.icon} alt={social.name} url={social.url} />
+            ))}
           </div>
 
           {/* Info - Right Side */}
@@ -68,8 +66,8 @@ export default function Navbar() {
               <Image
                 src="/logos/logo1.svg"
                 alt="World Citizen Logo"
-                width={250}
-                height={55}
+                width={293}
+                height={60}
                 priority
                 className="navbar-logo"
               />
@@ -122,10 +120,29 @@ export default function Navbar() {
   );
 }
 
-function SocialIcon({ Icon }: { Icon: any }) {
+function SocialIcon({ src, alt, url }: { src: string; alt: string; url: string }) {
   return (
-    <div className="social-icon">
-      <Icon />
-    </div>
+    <Link href={url} target="_blank" className="social-icon">
+      <div
+        className="icon-mask"
+        style={{
+          width: '18px',
+          height: '18px',
+          backgroundColor: 'currentColor',
+          WebkitMaskImage: `url("${src}")`,
+          maskImage: `url("${src}")`,
+          WebkitMaskSize: 'contain',
+          maskSize: 'contain',
+          WebkitMaskRepeat: 'no-repeat',
+          maskRepeat: 'no-repeat',
+          WebkitMaskPosition: 'center',
+          maskPosition: 'center'
+        }}
+      />
+    </Link>
   );
 }
+
+
+
+

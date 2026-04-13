@@ -5,7 +5,7 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 import ApplyBanner from "@/components/ApplyBanner";
 import UniversitySection from "@/components/UniversitySection";
 import Testimonials from "@/components/Testimonials";
-import ContactForm from "@/components/ContactForm";
+import ContactSection from "@/components/ContactSection";
 import ProcedureSection from "@/components/ProcedureSection";
 import TopDestinations from "@/components/TopDestinations";
 import NewsAndBlogs from "@/components/NewsAndBlogs";
@@ -23,7 +23,7 @@ export default function Home() {
       <WhyChooseUs />
       <AboutPartnerSection reverse={true} />
       <Testimonials />
-      <ContactForm />
+      <ContactSection />
       <NewsAndBlogs />
       <SocialAction />
     </main>

@@ -9,7 +9,7 @@ const steps = [
     title: "Free Consultation",
     desc: "Get the Best Study Abroad Free Consultation for Pakistani students with expert advice on course selection, visa clarity and personalised guidance for confident decisions.",
     icon: FaHeadset,
-    color: "#06C106", 
+    color: "#06C106",
     side: "left"
   },
   {
@@ -17,7 +17,7 @@ const steps = [
     title: "University & Course",
     desc: "Explore Top Universities for Pakistani Students with course options, admission guidance, eligibility clarity and trusted support for successful study abroad planning.",
     icon: FaUniversity,
-    color: "#03038C", 
+    color: "#03038C",
     side: "right"
   },
   {
@@ -25,7 +25,7 @@ const steps = [
     title: "Visa & Documentation",
     desc: "As a Trusted Student Visa Consultant in Bahria Town Lahore, we manage visa documentation accurately, ensuring compliance, clarity and higher approval confidence.",
     icon: FaFileAlt,
-    color: "#06C106", 
+    color: "#06C106",
     side: "left"
   },
   {
@@ -33,7 +33,7 @@ const steps = [
     title: "Prepare & Depart",
     desc: "With the Best Trusted Student Visa Consultant in Lahore, we prepare students for departure through guidance, planning checklists and confidence.",
     icon: FaPlaneDeparture,
-    color: "#03038C", 
+    color: "#03038C",
     side: "right"
   }
 ];
@@ -69,7 +69,7 @@ export default function ProcedureSection() {
             </span>
           </Typography>
           <Typography variant="body1" sx={{ color: '#666', fontFamily: 'var(--font-sans)', maxWidth: '700px', mx: 'auto', opacity: 0.8 }}>
-            Our procedure as the Best student visa consultant in Bahria Town Lahore ensures clear steps, 
+            Our procedure as the Best student visa consultant in Bahria Town Lahore ensures clear steps,
             honest guidance, smooth documentation and successful student visa outcomes.
           </Typography>
         </Box>
@@ -93,8 +93,8 @@ export default function ProcedureSection() {
             {steps.map((step, index) => {
               const isLeft = index % 2 === 0;
               return (
-                <Box key={index} sx={{ 
-                  display: 'flex', 
+                <Box key={index} sx={{
+                  display: 'flex',
                   justifyContent: isLeft ? 'flex-start' : 'flex-end',
                   mb: 4,
                   position: 'relative'
@@ -145,9 +145,9 @@ export default function ProcedureSection() {
 
                     {/* Content */}
                     <Box sx={{ position: 'relative', zIndex: 1, mt: 8 }}>
-                      <Typography variant="h5" sx={{ 
-                        fontWeight: 800, 
-                        mb: 2, 
+                      <Typography variant="h5" sx={{
+                        fontWeight: 800,
+                        mb: 2,
                         fontFamily: 'var(--font-heading)',
                         textAlign: isLeft ? 'right' : 'left',
                         pr: isLeft ? 1 : 0,
@@ -155,12 +155,13 @@ export default function ProcedureSection() {
                       }}>
                         {step.title}
                       </Typography>
-                      <Typography variant="body2" sx={{ 
-                        opacity: 0.9, 
-                        lineHeight: 1.6, 
+                      <Typography variant="body2" sx={{
+                        opacity: 0.9,
+                        lineHeight: 1.6,
                         fontSize: '14px',
                         fontFamily: 'var(--font-sans)',
-                        textAlign: isLeft ? 'right' : 'left'
+                        textAlign: isLeft ? 'right' : 'left',
+                        color: "white"
                       }}>
                         {step.desc}
                       </Typography>
