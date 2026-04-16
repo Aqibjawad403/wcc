@@ -43,12 +43,18 @@ export default function AboutPartnerSection({ reverse = false }: { reverse?: boo
               mb: 4,
               fontFamily: 'var(--font-sans)',
             }}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sagittis nulla eu nisi
-              efficitur, dictum consectetur elit vehicula. Aenean urna turpis, rutrum sed eros id,
-              volutpat hendrerit ipsum. Duis est urna, efficitur sollicitudin nibh id, varius
-              scelerisque nulla. Quisque malesuada arcu semper, ornare massa eget, malesuada
-              est. Sed hendrerit, libero a lacinia placerat, velit dui vulputate elit, a tincidunt odio
-              dolor eget metus.
+              World Citizen Consultants proudly stands as your partner in global education,
+              supporting Pakistani students at every stage of their study abroad journey.
+              As an International Student Visa Consultant in Bahria Town Lahore, we focus on
+              informed counseling, realistic options, and long-term academic value.
+              From selecting reputable universities to preparing strong visa files,
+              our approach is structured and student-centric. Families trust us for
+              clarity, ethical guidance, and consistent follow-up. Choosing an
+              experienced International Student Visa Consultant in Bahria Town
+              Lahore means gaining access to global opportunities with confidence.
+              At World Citizen Consultants bahria Town Lahore, an International
+              Student Visa Consultant in Bahria Town Lahore becomes a reliable guide,
+              not just a service provider.
             </Typography>
 
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: '91px', mb: 5 }}>
@@ -132,7 +138,7 @@ export default function AboutPartnerSection({ reverse = false }: { reverse?: boo
                 zIndex: 2
               }}>
                 <img
-                  src="/images/service1.jpg" // Using available images
+                  src="/partnership/img 1.svg" // Using available images
                   alt="Student Consultant"
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
@@ -149,10 +155,9 @@ export default function AboutPartnerSection({ reverse = false }: { reverse?: boo
                 overflow: 'hidden',
                 boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
                 zIndex: 1,
-                border: '8px solid #fff'
               }}>
                 <img
-                  src="/images/uk-banner.jpg" // Using available banner
+                  src="/partnership/img 2.svg" // Using available banner
                   alt="Global Education"
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />

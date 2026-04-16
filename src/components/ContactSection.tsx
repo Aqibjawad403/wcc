@@ -88,7 +88,7 @@ export default function ContactSection() {
 
             <Grid container spacing={3}>
               <Grid size={{ xs: 12, sm: 6 }}>
-                <Typography sx={{ mb: 1, fontWeight: 500, opacity: 0.9 }}>First Name</Typography>
+                <Typography sx={{ mb: 1, fontWeight: 500, color: '#fff' }}>First Name</Typography>
                 <TextField 
                   fullWidth 
                   placeholder="First Name" 
@@ -101,7 +101,7 @@ export default function ContactSection() {
                 />
               </Grid>
               <Grid size={{ xs: 12, sm: 6 }}>
-                <Typography sx={{ mb: 1, fontWeight: 500, opacity: 0.9 }}>Second Name</Typography>
+                <Typography sx={{ mb: 1, fontWeight: 500, color: '#fff' }}>Second Name</Typography>
                 <TextField 
                   fullWidth 
                   placeholder="Second Name" 
@@ -114,7 +114,7 @@ export default function ContactSection() {
                 />
               </Grid>
               <Grid size={{ xs: 12, sm: 6 }}>
-                <Typography sx={{ mb: 1, fontWeight: 500, opacity: 0.9 }}>Your E-mail</Typography>
+                <Typography sx={{ mb: 1, fontWeight: 500, color: '#fff' }}>Your E-mail</Typography>
                 <TextField 
                   fullWidth 
                   placeholder="Your E-mail" 
@@ -127,7 +127,7 @@ export default function ContactSection() {
                 />
               </Grid>
               <Grid size={{ xs: 12, sm: 6 }}>
-                <Typography sx={{ mb: 1, fontWeight: 500, opacity: 0.9 }}>Phone Number</Typography>
+                <Typography sx={{ mb: 1, fontWeight: 500, color: '#fff' }}>Phone Number</Typography>
                 <TextField 
                   fullWidth 
                   placeholder="Phone number" 
@@ -140,7 +140,7 @@ export default function ContactSection() {
                 />
               </Grid>
               <Grid size={{ xs: 12, sm: 6 }}>
-                <Typography sx={{ mb: 1, fontWeight: 500, opacity: 0.9 }}>Field of Interest</Typography>
+                <Typography sx={{ mb: 1, fontWeight: 500, color: '#fff' }}>Field of Interest</Typography>
                 <TextField 
                   fullWidth 
                   placeholder="Write a Field" 
@@ -153,7 +153,7 @@ export default function ContactSection() {
                 />
               </Grid>
               <Grid size={{ xs: 12, sm: 6 }}>
-                <Typography sx={{ mb: 1, fontWeight: 500, opacity: 0.9 }}>Where you want to Go!</Typography>
+                <Typography sx={{ mb: 1, fontWeight: 500, color: '#fff' }}>Where you want to Go!</Typography>
                 <TextField 
                   fullWidth 
                   placeholder="Add Country" 
@@ -166,7 +166,7 @@ export default function ContactSection() {
                 />
               </Grid>
               <Grid size={{ xs: 12 }}>
-                <Typography sx={{ mb: 1, fontWeight: 500, opacity: 0.9 }}>Message</Typography>
+                <Typography sx={{ mb: 1, fontWeight: 500, color: '#fff' }}>Message</Typography>
                 <TextField 
                   fullWidth 
                   multiline 

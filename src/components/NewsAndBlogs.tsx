@@ -68,30 +68,38 @@ export default function NewsAndBlogs() {
             borderRadius: '6px',
             textTransform: 'none',
             fontWeight: 700,
+            fontSize: '16px',
+            px: 4,
+            py: 1.5,
             '&:hover': { bgcolor: '#05a805' }
           }}>
             View More
           </Button>
         </Box>
 
-        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mb: 6 }}>
+        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mb: 6, alignItems: 'center' }}>
           {categories.map((cat) => (
-            <Chip
-              key={cat}
-              label={cat}
-              onClick={() => setActiveTab(cat)}
-              sx={{
-                bgcolor: activeTab === cat ? greenColor : '#fff',
-                color: activeTab === cat ? '#fff' : '#666',
-                border: activeTab === cat ? 'none' : '1px solid #eee',
-                fontWeight: 600,
-                fontSize: '12px',
-                height: '32px',
-                '&:hover': {
-                  bgcolor: activeTab === cat ? '#05a805' : '#f0f0f0',
-                }
-              }}
-            />
+            <Box key={cat} sx={{ display: 'flex', alignItems: 'center' }}>
+              <Chip
+                label={cat}
+                onClick={() => setActiveTab(cat)}
+                sx={{
+                  bgcolor: activeTab === cat ? greenColor : '#fff',
+                  color: activeTab === cat ? '#fff' : '#666',
+                  border: activeTab === cat ? 'none' : '1px solid #eee',
+                  fontWeight: 600,
+                  fontSize: '14px',
+                  height: '40px',
+                  px: 1,
+                  '&:hover': {
+                    bgcolor: activeTab === cat ? '#05a805' : '#f0f0f0',
+                  }
+                }}
+              />
+              {cat === "All" && (
+                <Box sx={{ width: '1.5px', height: '30px', bgcolor: '#ccc', ml: 2, mr: 1 }} />
+              )}
+            </Box>
           ))}
         </Box>
 
@@ -105,7 +113,7 @@ export default function NewsAndBlogs() {
                 <Box sx={{ 
                   position: 'relative', 
                   height: '240px', 
-                  borderRadius: '16px', 
+                  borderRadius: '8px', 
                   overflow: 'hidden',
                   mb: 2
                  }}>
@@ -119,7 +127,7 @@ export default function NewsAndBlogs() {
                 </Box>
                 <Typography variant="h6" sx={{ 
                   fontWeight: 700, 
-                  fontSize: '18px', 
+                  fontSize: '22px', 
                   mb: 1, 
                   cursor: 'pointer',
                   '&:hover': { color: greenColor }

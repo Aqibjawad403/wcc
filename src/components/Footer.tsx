@@ -54,7 +54,7 @@ export default function Footer() {
         left: 0,
         right: 0,
         bottom: 0,
-        backgroundImage: 'url("/images/world-map.png")', // Placeholder for world map overlay
+        backgroundImage: 'url("/logos/world-map.svg")', // Placeholder for world map overlay
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         opacity: 0.1,
@@ -62,19 +62,25 @@ export default function Footer() {
       }} />
 
       <Container maxWidth="xl" sx={{ position: 'relative', zIndex: 1, mb: 6 }}>
-        <Grid container spacing={4}>
+        <Box sx={{
+          display: 'flex',
+          flexDirection: { xs: 'column', md: 'row' },
+          justifyContent: 'space-between',
+          gap: { xs: 6, md: 4 },
+          alignItems: 'flex-start'
+        }}>
           {/* Logo & Description */}
-          <Grid size={{ xs: 12, md: 4 }}>
+          <Box sx={{ width: { xs: '100%', md: '30%' }, maxWidth: { md: '350px' } }}>
             <Box mb={3}>
               <Image
-                src="/logos/logo1.svg"
+                src="/logos/footer.svg"
                 alt="World Citizen"
-                width={250}
-                height={60}
+                width={341}
+                height={70}
                 style={{ objectFit: 'contain', filter: 'brightness(0) invert(1)' }} // Makes logo white for visibility on blue
               />
             </Box>
-            <Typography variant="body2" sx={{ color: 'white', mb: 4, opacity: 0.8, lineHeight: 1.8, maxWidth: '350px', fontFamily: 'var(--font-sans)' }}>
+            <Typography variant="body2" sx={{ textAlign: "justify", color: 'white', mb: 4, lineHeight: 1.8, fontFamily: 'var(--font-sans)' }}>
               World Citizen Consultants Bahria Town Lahore, guides students through destination selection, university choice, visa documentation, and cultural adaptation, offering personalized support that ensures informed decisions and a smooth, confident international education journey.
             </Typography>
 
@@ -89,24 +95,24 @@ export default function Footer() {
                 Mon-Sat: 10am - 7pm (PKT)
               </Typography>
             </Box>
-          </Grid>
+          </Box>
 
           {/* Top Countries */}
-          <Grid size={{ xs: 6, md: 2 }}>
+          <Box sx={{ width: { xs: '100%', sm: '45%', md: 'auto' } }}>
             <Typography variant="h6" sx={{ mb: 3, fontWeight: 700, fontFamily: 'var(--font-heading)', color: '#fff' }}>
               Top Countries
             </Typography>
             <Stack spacing={1.5}>
               {['United Kingdom', 'Canada', 'Australia', 'Turkey', 'Denmark', 'Sweden', 'France'].map((item) => (
-                <Link key={item} component={NextLink} href="/top-countries" underline="none" sx={{ color: '#fff', opacity: 0.8, fontSize: '14px', '&:hover': { opacity: 1, color: greenColor }, fontFamily: 'var(--font-sans)' }}>
+                <Link key={item} component={NextLink} href="/top-countries" underline="none" sx={{ color: '#fff', fontSize: '14px', '&:hover': { opacity: 1, color: greenColor }, fontFamily: 'var(--font-sans)' }}>
                   {item}
                 </Link>
               ))}
             </Stack>
-          </Grid>
+          </Box>
 
           {/* Useful Links */}
-          <Grid size={{ xs: 6, md: 2 }}>
+          <Box sx={{ width: { xs: '100%', sm: '45%', md: 'auto' } }}>
             <Typography variant="h6" sx={{ mb: 3, fontWeight: 700, fontFamily: 'var(--font-heading)', color: '#fff' }}>
               Useful Links
             </Typography>
@@ -120,15 +126,15 @@ export default function Footer() {
                 { name: 'Book an Appointment', link: '#' },
                 { name: 'Top Countries', link: '/top-countries' }
               ].map((item) => (
-                <Link key={item.name} component={NextLink} href={item.link} underline="none" sx={{ color: '#fff', opacity: 0.8, fontSize: '14px', '&:hover': { opacity: 1, color: greenColor }, fontFamily: 'var(--font-sans)' }}>
+                <Link key={item.name} component={NextLink} href={item.link} underline="none" sx={{ color: '#fff', fontSize: '14px', '&:hover': { opacity: 1, color: greenColor }, fontFamily: 'var(--font-sans)' }}>
                   {item.name}
                 </Link>
               ))}
             </Stack>
-          </Grid>
+          </Box>
 
           {/* Contact Us */}
-          <Grid size={{ xs: 12, md: 4 }}>
+          <Box sx={{ width: { xs: '100%', md: '30%' }, maxWidth: { md: '320px' } }}>
             <Typography variant="h6" sx={{ mb: 3, fontWeight: 700, fontFamily: 'var(--font-heading)', color: '#fff' }}>
               Contact Us
             </Typography>
@@ -169,7 +175,7 @@ export default function Footer() {
                 <Box sx={{ bgcolor: '#fff', borderRadius: '50%', minWidth: '32px', height: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: footerBgColor }}>
                   <MdLocationOn size={18} />
                 </Box>
-                <Typography variant="body2" sx={{ color: 'white', opacity: 0.8, fontFamily: 'var(--font-sans)', maxWidth: '280px' }}>
+                <Typography variant="body2" sx={{ color: 'white', fontFamily: 'var(--font-sans)', maxWidth: '100%' }}>
                   1st Floor, 57 Quaid Block near Imtiaz Mega Mall Bahria Town, Lahore.
                 </Typography>
               </Box>
@@ -201,8 +207,8 @@ export default function Footer() {
                 </IconButton>
               ))}
             </Stack>
-          </Grid>
-        </Grid>
+          </Box>
+        </Box>
       </Container>
 
       {/* Bottom Copyright Bar */}

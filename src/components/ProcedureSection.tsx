@@ -1,14 +1,14 @@
 "use client";
 
 import { Box, Container, Typography, Grid } from "@mui/material";
-import { FaHeadset, FaUniversity, FaFileAlt, FaPlaneDeparture } from "react-icons/fa";
+import Image from "next/image";
 
 const steps = [
   {
     number: "01",
     title: "Free Consultation",
     desc: "Get the Best Study Abroad Free Consultation for Pakistani students with expert advice on course selection, visa clarity and personalised guidance for confident decisions.",
-    icon: FaHeadset,
+    image: "/procedure/img 1.svg",
     color: "#06C106",
     side: "left"
   },
@@ -16,7 +16,7 @@ const steps = [
     number: "02",
     title: "University & Course",
     desc: "Explore Top Universities for Pakistani Students with course options, admission guidance, eligibility clarity and trusted support for successful study abroad planning.",
-    icon: FaUniversity,
+    image: "/procedure/img 2.svg",
     color: "#03038C",
     side: "right"
   },
@@ -24,7 +24,7 @@ const steps = [
     number: "03",
     title: "Visa & Documentation",
     desc: "As a Trusted Student Visa Consultant in Bahria Town Lahore, we manage visa documentation accurately, ensuring compliance, clarity and higher approval confidence.",
-    icon: FaFileAlt,
+    image: "/procedure/img 3.svg",
     color: "#06C106",
     side: "left"
   },
@@ -32,7 +32,7 @@ const steps = [
     number: "04",
     title: "Prepare & Depart",
     desc: "With the Best Trusted Student Visa Consultant in Lahore, we prepare students for departure through guidance, planning checklists and confidence.",
-    icon: FaPlaneDeparture,
+    image: "/procedure/img 4.svg",
     color: "#03038C",
     side: "right"
   }
@@ -82,11 +82,36 @@ export default function ProcedureSection() {
             left: '50%',
             top: 0,
             bottom: 0,
-            width: '2px',
+            width: '4px',
             bgcolor: deepBlue,
             display: { xs: 'none', md: 'block' },
             transform: 'translateX(-50%)'
-          }} />
+          }}>
+            {/* Top Dot */}
+            <Box sx={{
+              position: 'absolute',
+              top: 0,
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              width: '24px',
+              height: '24px',
+              bgcolor: deepBlue,
+              borderRadius: '50%',
+              boxShadow: '0 0 15px rgba(3, 3, 140, 0.4)'
+            }} />
+            {/* Bottom Dot */}
+            <Box sx={{
+              position: 'absolute',
+              bottom: 0,
+              left: '50%',
+              transform: 'translate(-50%, 50%)',
+              width: '24px',
+              height: '24px',
+              bgcolor: deepBlue,
+              borderRadius: '50%',
+              boxShadow: '0 0 15px rgba(3, 3, 140, 0.4)'
+            }} />
+          </Box>
 
           {/* Steps */}
           <Box sx={{ position: 'relative' }}>
@@ -96,19 +121,25 @@ export default function ProcedureSection() {
                 <Box key={index} sx={{
                   display: 'flex',
                   justifyContent: isLeft ? 'flex-start' : 'flex-end',
-                  mb: 4,
+                  mb: 8,
                   position: 'relative'
                 }}>
                   {/* Card */}
                   <Box sx={{
-                    width: { xs: '100%', md: 'calc(50% - 20px)' },
+                    width: { xs: '100%', md: 'calc(50% - 100px)' },
                     bgcolor: step.color,
                     borderRadius: '24px',
                     p: 4,
                     color: '#fff',
                     position: 'relative',
                     overflow: 'hidden',
-                    boxShadow: '0 20px 40px rgba(0,0,0,0.1)'
+                    boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
+                    minHeight: '240px',
+                    transition: 'all 0.3s ease',
+                    '&:hover': {
+                      transform: 'translateY(-5px)',
+                      boxShadow: `0 25px 50px rgba(0,0,0,0.2)`
+                    }
                   }}>
                     {/* Background Number */}
                     <Typography sx={{
@@ -117,34 +148,42 @@ export default function ProcedureSection() {
                       [isLeft ? 'left' : 'right']: 10,
                       fontSize: '120px',
                       fontWeight: 900,
-                      color: 'rgba(0,0,0,0.1)',
+                      color: 'rgba(0,0,0,0.15)',
                       lineHeight: 1,
                       zIndex: 0,
+                      fontStyle: 'italic',
                       fontFamily: 'var(--font-heading)'
                     }}>
                       {step.number}
                     </Typography>
 
-                    {/* Icon Box */}
+                    {/* Image Box */}
                     <Box sx={{
                       position: 'absolute',
-                      top: 40,
-                      [isLeft ? 'right' : 'left']: 40,
-                      width: '60px',
-                      height: '60px',
-                      bgcolor: 'rgba(255,255,255,0.15)',
-                      borderRadius: '16px',
+                      top: 30,
+                      [isLeft ? 'right' : 'left']: 30,
+                      width: '70px',
+                      height: '70px',
+                      bgcolor: '#FFFFFF',
+                      borderRadius: '50%',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       zIndex: 1,
-                      backdropFilter: 'blur(4px)'
+                      boxShadow: '0 8px 16px rgba(0,0,0,0.1)',
+                      p: 1
                     }}>
-                      <step.icon size={28} />
+                      <Image
+                        src={step.image}
+                        alt={step.title}
+                        width={50}
+                        height={50}
+                        style={{ objectFit: 'contain' }}
+                      />
                     </Box>
 
                     {/* Content */}
-                    <Box sx={{ position: 'relative', zIndex: 1, mt: 8 }}>
+                    <Box sx={{ position: 'relative', zIndex: 1, mt: '119px' }}>
                       <Typography variant="h5" sx={{
                         fontWeight: 800,
                         mb: 2,
@@ -169,33 +208,18 @@ export default function ProcedureSection() {
 
                   </Box>
 
-                  {/* Dashed Connector Line */}
                   <Box sx={{
                     position: 'absolute',
-                    top: '50%',
-                    left: isLeft ? 'calc(50% - 20px)' : '50%',
-                    width: '20px',
+                    top: '70px',
+                    left: isLeft ? 'calc(50% - 100px)' : '50%',
+                    width: '100px',
                     height: '0px',
-                    borderBottom: '3px dashed ' + deepBlue,
+                    borderBottom: '2px dashed ' + '#03038C',
                     display: { xs: 'none', md: 'block' },
-                    transform: 'translateY(-50%)',
                     zIndex: 1
                   }} />
 
-                  {/* Dot on main line */}
-                  <Box sx={{
-                    position: 'absolute',
-                    left: '50%',
-                    top: '50%',
-                    width: '12px',
-                    height: '12px',
-                    bgcolor: '#fff',
-                    border: '3px solid ' + deepBlue,
-                    borderRadius: '50%',
-                    display: { xs: 'none', md: 'block' },
-                    transform: 'translate(-50%, -50%)',
-                    zIndex: 2
-                  }} />
+
                 </Box>
               );
             })}

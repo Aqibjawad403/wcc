@@ -14,7 +14,7 @@ export default function ApplyBanner() {
         top: '50%',
         left: 0,
         transform: 'translateY(-50%)',
-        width: { xs: '100%', md: '950px' },
+        width: { xs: '100%', md: '850px' },
         height: { xs: 'auto', md: '560px' },
         bgcolor: deepBlue,
         borderTopRightRadius: '15px',
@@ -29,21 +29,19 @@ export default function ApplyBanner() {
         {/* Absolute Image - Specific positioning as per user request */}
         <Box sx={{
           position: 'absolute',
-          left: { md: '920px' },
+          left: { md: '800px' },
           top: '50%',
           transform: 'translateY(-50%)',
-          width: { xs: '100%', md: '760px' },
+          width: { xs: '100%', md: '700px' },
           height: { xs: '350px', md: '400px' },
           borderRadius: '15px',
           overflow: 'hidden',
-          boxShadow: '0 30px 60px rgba(0,0,0,0.3)',
-          border: '10px solid #fff',
           backgroundColor: '#fff',
           display: { xs: 'none', md: 'block' },
           zIndex: 2
         }}>
           <img
-            src="/images/uk-banner.jpg"
+            src="/uk degree.svg"
             alt="UK London Skyline"
             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
           />
@@ -54,7 +52,7 @@ export default function ApplyBanner() {
           <Grid size={{ xs: 12, md: 7 }}>
             <Box sx={{
               color: '#fff',
-              maxWidth: '1000px',
+              maxWidth: '850px',
               pl: { md: 8 }, // Added left padding for better spacing
               py: { xs: 4, md: 8 }, // Added vertical padding
               display: 'flex',
@@ -66,7 +64,6 @@ export default function ApplyBanner() {
                 fontSize: { xs: '32px', md: '48px' }, // Slightly adjusted for better fit
                 fontFamily: 'var(--font-heading)',
                 lineHeight: 1.1,
-                letterSpacing: '-0.02em',
                 color: '#fff'
               }}>
                 A UK degree that opens global doors.

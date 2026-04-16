@@ -7,42 +7,42 @@ const services = [
   {
     title: "University Admission",
     desc: "Get help choosing the right UK university. We guide you through the full application process.",
-    image: "/images/service1.jpg"
+    image: "/services/img 1.svg"
   },
   {
     title: "Visa Application Support",
     desc: "We prepare and review all visa documents. Increase your chances of quick approval.",
-    image: "/images/service2.jpg"
+    image: "/services/img 2.svg"
   },
   {
     title: "SOP & Documents",
     desc: "Craft strong Statements of Purpose (SOPs). We ensure all your paperwork is perfect.",
-    image: "/images/service3.jpg"
+    image: "/services/img 3.svg"
   },
   {
     title: "Scholarship Guidance",
     desc: "Find and apply for scholarships with ease. We help reduce your study costs.",
-    image: "/images/service4.jpg"
+    image: "/services/img 4.svg"
   },
   {
     title: "IELTS & Interview Prep",
     desc: "Boost your confidence with expert coaching. Prepare for language tests and visa interviews.",
-    image: "/images/service5.jpg"
+    image: "/services/img 5.svg"
   },
   {
     title: "Pre-Departure Support",
     desc: "Get ready for life in the UK. We assist with travel, housing, and settling in.",
-    image: "/images/service6.jpg"
+    image: "/services/img 6.svg"
   },
   {
     title: "Course & Career Advice",
     desc: "Choose the right program for your future. We align your course with long-term goals.",
-    image: "/images/service7.jpg"
+    image: "/services/img 7.svg"
   },
   {
     title: "Document Checklist",
     desc: "Never miss an important paper again. We verify every document before submission.",
-    image: "/images/service8.jpg"
+    image: "/services/img 8.svg"
   }
 ];
 
