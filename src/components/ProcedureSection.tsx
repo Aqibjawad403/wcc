@@ -160,10 +160,10 @@ export default function ProcedureSection() {
                     {/* Image Box */}
                     <Box sx={{
                       position: 'absolute',
-                      top: 30,
+                      top: 60,
                       [isLeft ? 'right' : 'left']: 30,
-                      width: '70px',
-                      height: '70px',
+                      width: '50px',
+                      height: '50px',
                       bgcolor: '#FFFFFF',
                       borderRadius: '50%',
                       display: 'flex',
@@ -176,14 +176,14 @@ export default function ProcedureSection() {
                       <Image
                         src={step.image}
                         alt={step.title}
-                        width={50}
-                        height={50}
+                        width={30}
+                        height={30}
                         style={{ objectFit: 'contain' }}
                       />
                     </Box>
 
                     {/* Content */}
-                    <Box sx={{ position: 'relative', zIndex: 1, mt: '119px' }}>
+                    <Box sx={{ position: 'relative', zIndex: 1, mt: '90px' }}>
                       <Typography variant="h5" sx={{
                         fontWeight: 800,
                         mb: 2,
@@ -210,7 +210,8 @@ export default function ProcedureSection() {
 
                   <Box sx={{
                     position: 'absolute',
-                    top: '70px',
+                    top: '50%',
+                    transform: 'translateY(-50%)',
                     left: isLeft ? 'calc(50% - 100px)' : '50%',
                     width: '100px',
                     height: '0px',

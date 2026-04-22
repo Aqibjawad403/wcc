@@ -1,7 +1,8 @@
 "use client";
 
-import { Box, Container, Typography, Grid, Button, Paper } from "@mui/material";
+import { Box, Container, Typography, Grid, Paper } from "@mui/material";
 import Image from "next/image";
+import BlobButton from "./BlobButton";
 
 const services = [
   {
@@ -52,7 +53,7 @@ export default function ServicesSection() {
   const greenColor = '#06C106';
 
   return (
-    <Box sx={{ py: 8, bgcolor: '#f8faff' }}>
+    <Box sx={{ py: 8, bgcolor: '#F3F3FF' }}>
       <Container maxWidth="xl">
         <Box sx={{ textAlign: 'center', mb: '35px' }}>
           <Typography variant="h2" sx={{
@@ -76,7 +77,7 @@ export default function ServicesSection() {
               }} />
             </span>
           </Typography>
-          <Typography variant="body1" sx={{ color: '#666', fontFamily: 'var(--font-sans)', opacity: 0.8 }}>
+          <Typography variant="body1" sx={{ color: '#666', fontFamily: 'var(--font-sans)', fontSize: '18px' }}>
             Expert support for every step of your study abroad journey.
           </Typography>
         </Box>
@@ -129,12 +130,12 @@ export default function ServicesSection() {
                   flexGrow: 1,
                   display: 'flex',
                   flexDirection: 'column',
-                  gap: 1
+                  gap: '6px'
                 }}>
                   <Typography variant="h6" sx={{ fontWeight: 700, fontSize: '22px', fontFamily: 'var(--font-heading)' }}>
                     {s.title}
                   </Typography>
-                  <Typography variant="body2" sx={{ color: '#fff', opacity: 0.8, fontSize: '18px', lineHeight: 1.5, fontFamily: 'var(--font-sans)', mt: 1 }}>
+                  <Typography variant="body2" sx={{ color: '#fff', fontSize: '18px', lineHeight: 1.5, fontFamily: 'var(--font-sans)' }}>
                     {s.desc}
                   </Typography>
                 </Box>
@@ -143,19 +144,10 @@ export default function ServicesSection() {
           ))}
         </Grid>
 
-        <Box sx={{ textAlign: 'center', mt: 8 }}>
-          <Button variant="contained" sx={{
-            bgcolor: greenColor,
-            px: 6,
-            py: 1.5,
-            borderRadius: '8px',
-            textTransform: 'none',
-            fontWeight: 700,
-            fontSize: '16px',
-            '&:hover': { bgcolor: '#05a805' }
-          }}>
+        <Box sx={{ textAlign: 'center', mt: 8, mb: '100px' }}>
+          <BlobButton color={greenColor}>
             Talk With Our Experts
-          </Button>
+          </BlobButton>
         </Box>
       </Container>
     </Box>

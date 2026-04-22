@@ -9,12 +9,9 @@ import {
   FaYoutube,
   FaPinterestP,
   FaTiktok,
-  FaPhoneAlt,
-  FaGlobe,
-  FaEnvelope,
   FaArrowUp
 } from "react-icons/fa";
-import { MdOutlineWatchLater, MdLocationOn } from "react-icons/md";
+import { MdOutlineWatchLater } from "react-icons/md";
 import Image from "next/image";
 import NextLink from "next/link";
 
@@ -57,7 +54,6 @@ export default function Footer() {
         backgroundImage: 'url("/logos/world-map.svg")', // Placeholder for world map overlay
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        opacity: 0.1,
         pointerEvents: 'none'
       }} />
 
@@ -77,7 +73,7 @@ export default function Footer() {
                 alt="World Citizen"
                 width={341}
                 height={70}
-                style={{ objectFit: 'contain', filter: 'brightness(0) invert(1)' }} // Makes logo white for visibility on blue
+                style={{ objectFit: 'contain' }} // Makes logo white for visibility on blue
               />
             </Box>
             <Typography variant="body2" sx={{ textAlign: "justify", color: 'white', mb: 4, lineHeight: 1.8, fontFamily: 'var(--font-sans)' }}>
@@ -87,7 +83,7 @@ export default function Footer() {
             <Typography variant="h6" sx={{ mb: 2, fontWeight: 700, fontFamily: 'var(--font-heading)', color: '#fff' }}>
               Office Timings:
             </Typography>
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, opacity: 0.9 }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
               <Box sx={{ bgcolor: '#fff', borderRadius: '50%', p: '6px', display: 'flex', color: footerBgColor }}>
                 <MdOutlineWatchLater size={20} />
               </Box>
@@ -104,7 +100,7 @@ export default function Footer() {
             </Typography>
             <Stack spacing={1.5}>
               {['United Kingdom', 'Canada', 'Australia', 'Turkey', 'Denmark', 'Sweden', 'France'].map((item) => (
-                <Link key={item} component={NextLink} href="/top-countries" underline="none" sx={{ color: '#fff', fontSize: '14px', '&:hover': { opacity: 1, color: greenColor }, fontFamily: 'var(--font-sans)' }}>
+                <Link key={item} component={NextLink} href="/top-countries" underline="none" sx={{ color: '#fff', fontSize: '14px', '&:hover': { color: greenColor }, fontFamily: 'var(--font-sans)' }}>
                   {item}
                 </Link>
               ))}
@@ -126,7 +122,7 @@ export default function Footer() {
                 { name: 'Book an Appointment', link: '#' },
                 { name: 'Top Countries', link: '/top-countries' }
               ].map((item) => (
-                <Link key={item.name} component={NextLink} href={item.link} underline="none" sx={{ color: '#fff', fontSize: '14px', '&:hover': { opacity: 1, color: greenColor }, fontFamily: 'var(--font-sans)' }}>
+                <Link key={item.name} component={NextLink} href={item.link} underline="none" sx={{ color: '#fff', fontSize: '14px', '&:hover': { color: greenColor }, fontFamily: 'var(--font-sans)' }}>
                   {item.name}
                 </Link>
               ))}
@@ -141,10 +137,10 @@ export default function Footer() {
             <Stack spacing={2.5}>
               {/* Phone */}
               <Box sx={{ display: 'flex', gap: 2 }}>
-                <Box sx={{ bgcolor: '#fff', borderRadius: '50%', minWidth: '32px', height: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: footerBgColor }}>
-                  <FaPhoneAlt size={14} />
+                <Box sx={{ bgcolor: '#fff', borderRadius: '50%', minWidth: '32px', height: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <Image src="/footer/call.svg" alt="Phone" width={18} height={18} />
                 </Box>
-                <Typography variant="body2" sx={{ color: 'white', opacity: 0.9, lineHeight: 1.4, fontFamily: 'var(--font-sans)' }}>
+                <Typography variant="body2" sx={{ color: 'white', lineHeight: 1.4, fontFamily: 'var(--font-sans)' }}>
                   +92 333 0630064 | +92 334 1881851 <br />
                   +92 330 6660635
                 </Typography>
@@ -152,28 +148,28 @@ export default function Footer() {
 
               {/* Website */}
               <Box sx={{ display: 'flex', gap: 2 }}>
-                <Box sx={{ bgcolor: '#fff', borderRadius: '50%', minWidth: '32px', height: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: footerBgColor }}>
-                  <FaGlobe size={16} />
+                <Box sx={{ bgcolor: '#fff', borderRadius: '50%', minWidth: '32px', height: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <Image src="/footer/website.svg" alt="Website" width={18} height={18} />
                 </Box>
-                <Link href="https://www.worldcitizenconsultants.com" underline="none" sx={{ color: '#fff', opacity: 0.9, '&:hover': { color: greenColor }, fontFamily: 'var(--font-sans)' }}>
+                <Link href="https://www.worldcitizenconsultants.com" underline="none" sx={{ color: '#fff', '&:hover': { color: greenColor }, fontFamily: 'var(--font-sans)' }}>
                   www.worldcitizenconsultants.com
                 </Link>
               </Box>
 
               {/* Email */}
               <Box sx={{ display: 'flex', gap: 2 }}>
-                <Box sx={{ bgcolor: '#fff', borderRadius: '50%', minWidth: '32px', height: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: footerBgColor }}>
-                  <FaEnvelope size={14} />
+                <Box sx={{ bgcolor: '#fff', borderRadius: '50%', minWidth: '32px', height: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <Image src="/footer/mail.svg" alt="Email" width={18} height={18} />
                 </Box>
-                <Link href="mailto:info@worldcitizenconsultants.com" underline="none" sx={{ color: '#fff', opacity: 0.9, '&:hover': { color: greenColor }, fontFamily: 'var(--font-sans)' }}>
+                <Link href="mailto:info@worldcitizenconsultants.com" underline="none" sx={{ color: '#fff', '&:hover': { color: greenColor }, fontFamily: 'var(--font-sans)' }}>
                   info@worldcitizenconsultants.com
                 </Link>
               </Box>
 
               {/* Address */}
               <Box sx={{ display: 'flex', gap: 2 }}>
-                <Box sx={{ bgcolor: '#fff', borderRadius: '50%', minWidth: '32px', height: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: footerBgColor }}>
-                  <MdLocationOn size={18} />
+                <Box sx={{ bgcolor: '#fff', borderRadius: '50%', minWidth: '32px', height: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <Image src="/footer/location_on.svg" alt="Location" width={18} height={18} />
                 </Box>
                 <Typography variant="body2" sx={{ color: 'white', fontFamily: 'var(--font-sans)', maxWidth: '100%' }}>
                   1st Floor, 57 Quaid Block near Imtiaz Mega Mall Bahria Town, Lahore.

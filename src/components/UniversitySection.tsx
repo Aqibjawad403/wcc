@@ -1,7 +1,8 @@
 "use client";
 
-import { Container, Typography, Box, Grid, Button } from "@mui/material";
+import { Container, Typography, Box } from "@mui/material";
 import Image from "next/image";
+import BlobButton from "./BlobButton";
 
 const universities = [
   { name: "Ulster University", logo: "/home/trusted partner 1.svg" },
@@ -33,19 +34,9 @@ export default function UniversitySection() {
               </span>{' '}with Universities
             </Typography>
 
-            <Button variant="contained" sx={{
-              bgcolor: '#06C106',
-              '&:hover': { bgcolor: '#05a805' },
-              borderRadius: '8px',
-              textTransform: 'none',
-              px: 4,
-              py: 1,
-              fontWeight: 700,
-              whiteSpace: 'nowrap',
-              flexShrink: 0,
-            }}>
+            <BlobButton color="#06C106">
               View More
-            </Button>
+            </BlobButton>
           </Box>
 
           <Typography variant="body1" sx={{
@@ -59,35 +50,72 @@ export default function UniversitySection() {
 
         </Box>
 
-        <Grid container spacing={3}>
-          {universities.map((uni, idx) => (
-            <Grid size={{ xs: 6, sm: 4, md: 2.4 }} key={idx}>
-              <Box sx={{
+        <Box sx={{ 
+          overflow: 'hidden', 
+          position: 'relative',
+          width: '100%',
+          mt: 6,
+          '&::before, &::after': {
+            content: '""',
+            position: 'absolute',
+            top: 0,
+            width: '150px',
+            height: '100%',
+            zIndex: 2,
+          },
+          '&::before': {
+            left: 0,
+            background: 'linear-gradient(to right, #fff, transparent)',
+          },
+          '&::after': {
+            right: 0,
+            background: 'linear-gradient(to left, #fff, transparent)',
+          }
+        }}>
+          <Box sx={{
+            display: 'flex',
+            width: 'max-content',
+            animation: 'marquee 40s linear infinite',
+            '@keyframes marquee': {
+              '0%': { transform: 'translateX(0)' },
+              '100%': { transform: 'translateX(-50%)' }
+            },
+            '&:hover': {
+              animationPlayState: 'paused'
+            }
+          }}>
+            {[...universities, ...universities].map((uni, idx) => (
+              <Box key={idx} sx={{
+                width: '280px',
+                mx: 1.5,
+                flexShrink: 0,
                 border: '1px solid #e0e0e0',
                 borderRadius: '12px',
-                p: 3,
+                p: 2,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                minHeight: '120px',
+                height: '140px',
                 transition: 'transform 0.3s, box-shadow 0.3s, border 0.3s',
+                cursor: 'pointer',
                 '&:hover': {
                   transform: 'translateY(-5px)',
-                  border: '0.5px solid #03038C',
-                  boxShadow: '0px 0px 10px 0px #00000040',
+                  border: '1px solid #03038C',
+                  boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.1)',
                 }
               }}>
-                <Image
-                  src={uni.logo}
-                  alt={uni.name}
-                  width={150}
-                  height={80}
-                  style={{ objectFit: 'contain', maxWidth: '100%', height: 'auto' }}
-                />
+                <Box sx={{ position: 'relative', width: '100%', height: '100%' }}>
+                  <Image
+                    src={uni.logo}
+                    alt={uni.name}
+                    fill
+                    style={{ objectFit: 'contain', padding: '15px' }}
+                  />
+                </Box>
               </Box>
-            </Grid>
-          ))}
-        </Grid>
+            ))}
+          </Box>
+        </Box>
       </Container>
     </Box>
   );

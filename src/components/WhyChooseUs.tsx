@@ -1,6 +1,8 @@
 "use client";
 
 import { Box, Container, Typography, Grid, Button, Paper, Stack } from "@mui/material";
+import { keyframes } from "@mui/system";
+
 import {
   FaCheckCircle,
   FaUserGraduate,
@@ -9,6 +11,16 @@ import {
 } from "react-icons/fa";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
+
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
 
 const features = [
   {
@@ -140,18 +152,30 @@ function FeatureIcon({ icon }: { icon: React.ReactNode }) {
       border: `3px solid ${greenColor}`,
       p: '4px'
     }}>
-      <Box sx={{
+      <Box className="dot-marker" sx={{
         position: 'absolute',
-        top: '-7px',
-        left: '50%',
-        transform: 'translateX(-50%)',
-        width: '14px',
-        height: '14px',
-        bgcolor: deepBlue,
-        borderRadius: '50%',
-        border: '3px solid white',
-        zIndex: 2
-      }} />
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        opacity: 0,
+        zIndex: 2,
+        pointerEvents: 'none',
+        transition: 'opacity 0.3s ease'
+      }}>
+        <Box sx={{
+          position: 'absolute',
+          top: '-7px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          width: '14px',
+          height: '14px',
+          bgcolor: deepBlue,
+          borderRadius: '50%',
+          border: '3px solid white',
+        }} />
+      </Box>
+
 
       <Box sx={{
         width: '100%',
@@ -163,11 +187,11 @@ function FeatureIcon({ icon }: { icon: React.ReactNode }) {
         alignItems: 'center',
         justifyContent: 'center'
       }}>
-        <Image 
-          src={icon as string} 
-          alt="icon" 
-          width={40} 
-          height={40} 
+        <Image
+          src={icon as string}
+          alt="icon"
+          width={40}
+          height={40}
           style={{ objectFit: 'contain' }}
         />
       </Box>
@@ -183,7 +207,8 @@ export default function WhyChooseUs() {
     <Box sx={{
       bgcolor: deepBlue,
       color: '#fff',
-      py: '120px',
+      pt: '90px',
+      pb: '73px',
       position: 'relative',
       overflow: 'hidden'
     }}>
@@ -238,8 +263,15 @@ export default function WhyChooseUs() {
                   alignItems: 'center',
                   background: '#fff',
                   border: '1px solid rgba(255,255,255,0.1)',
-                  transition: 'transform 0.3s',
-                  '&:hover': { transform: 'translateX(10px)' }
+                  transition: 'all 0.3s ease',
+                  '&:hover': {
+                    transform: 'translateX(10px)',
+                    '& .dot-marker': {
+                      opacity: 1,
+                      animation: `${rotate} 3s linear infinite`
+                    }
+                  }
+
                 }}>
                   <FeatureIcon icon={feature.icon} />
                   <Box>
@@ -274,8 +306,8 @@ export default function WhyChooseUs() {
         </Grid>
 
         <Box sx={{
-          mt: 12,
-          pt: 8,
+          mt: 8,
+          pt: '100px',
           borderTop: '2px solid',
           borderImageSource: 'linear-gradient(90deg, rgba(3, 3, 140, 0) 0%, #06C106 53.37%, rgba(3, 3, 140, 0) 99.99%)',
           borderImageSlice: 1,

@@ -12,7 +12,6 @@ const testimonials = [
     source: "Google",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sagittis nulla eu nisi efficitur, dictum consectetur elit vehicula. Aenean urna turpis, rutrum sed eros id, volutpat hendrerit ipsum. Duis est urna, efficitur sollicitudin nibh id, varius scelerisque nulla. Quisque malesuada arcu semper, ornare massa eget, malesuada est. Sed hendrerit, libero a lacinia placerat.",
     rating: 5,
-    highlight: false
   },
   {
     name: "Sarah Khan",
@@ -21,7 +20,6 @@ const testimonials = [
     source: "Google",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sagittis nulla eu nisi efficitur, dictum consectetur elit vehicula. Aenean urna turpis, rutrum sed eros id, volutpat hendrerit ipsum. Duis est urna, efficitur sollicitudin nibh id, varius scelerisque nulla. Quisque malesuada arcu semper, ornare massa eget, malesuada est. Sed hendrerit, libero a lacinia placerat, velit dui vulputate elit, a tincidunt odio dolor eget metus. Phasellus eleifend.",
     rating: 5,
-    highlight: false
   },
   {
     name: "Ahmed Malik",
@@ -30,7 +28,6 @@ const testimonials = [
     source: "Google",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sagittis nulla eu nisi efficitur, dictum consectetur elit vehicula. Aenean urna turpis, rutrum sed eros id, volutpat hendrerit ipsum. Duis est urna, efficitur sollicitudin nibh id, varius scelerisque nulla. Quisque malesuada arcu semper, ornare massa eget, malesuada est. Sed hendrerit, libero a lacinia placerat, velit dui vulputate elit, a tincidunt odio dolor eget metus. Phasellus eleifend, lacinia pla...",
     rating: 5,
-    highlight: true // The third one in image has a blue border
   }
 ];
 
@@ -38,7 +35,7 @@ export default function Testimonials() {
   const greenColor = '#06C106';
 
   return (
-    <Box sx={{ bgcolor: '#f8f9ff', py: 12 }}>
+    <Box sx={{ bgcolor: '#F3F3FF', py: 12 }}>
       <Container maxWidth="xl">
         <Box sx={{ mb: 6 }}>
           <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
@@ -104,18 +101,25 @@ export default function Testimonials() {
                 height: '100%',
                 display: 'flex',
                 flexDirection: 'column',
-                border: t.highlight ? '2px solid #2e3192' : '1px solid #eee',
-                transition: 'transform 0.3s ease',
-                '&:hover': { transform: 'translateY(-10px)' }
+                border: '1.5px solid #eee',
+                transition: 'all 0.3s ease',
+                '&:hover': { 
+                  transform: 'translateY(-10px)',
+                  borderColor: '#2e3192',
+                  '& .google-logo': {
+                    filter: 'grayscale(0%)',
+                    opacity: 1
+                  }
+                }
               }}>
                 <Stack direction="row" spacing={0.5} sx={{ color: '#ffc107', mb: 3 }}>
                   {[...Array(t.rating)].map((_, i) => <FaStar key={i} size={16} />)}
                 </Stack>
 
-                <Typography variant="body2" sx={{ 
-                  color: '#555', 
-                  fontSize: '15px', 
-                  lineHeight: 1.7, 
+                <Typography variant="body2" sx={{
+                  color: '#555',
+                  fontSize: '15px',
+                  lineHeight: 1.7,
                   fontFamily: 'var(--font-sans)',
                   mb: 4,
                   flexGrow: 1,
@@ -128,8 +132,8 @@ export default function Testimonials() {
 
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <Stack direction="row" spacing={2} alignItems="center">
-                    <Avatar 
-                      src={t.image} 
+                    <Avatar
+                      src={t.image}
                       alt={t.name}
                       sx={{ width: 44, height: 44, border: `2px solid ${greenColor}` }}
                     />
@@ -142,13 +146,23 @@ export default function Testimonials() {
                       </Typography>
                     </Box>
                   </Stack>
-                  <Box sx={{ position: 'relative', width: 70, height: 25 }}>
-                   <Image 
-                    src="/google.svg" 
-                    alt="Google" 
-                    fill 
-                    style={{ objectFit: 'contain' }}
-                   />
+                  <Box 
+                    className="google-logo"
+                    sx={{ 
+                      position: 'relative', 
+                      width: 70, 
+                      height: 25,
+                      filter: 'grayscale(100%)',
+                      opacity: 0.6,
+                      transition: 'all 0.3s ease'
+                    }}
+                  >
+                    <Image
+                      src="/google.svg"
+                      alt="Google"
+                      fill
+                      style={{ objectFit: 'contain' }}
+                    />
                   </Box>
                 </Box>
               </Paper>

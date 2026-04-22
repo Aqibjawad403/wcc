@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
-import { DM_Sans, Gabarito } from "next/font/google";
+import { DM_Sans, Gabarito, Fustat } from "next/font/google";
 import "./globals.css";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
   subsets: ["latin"],
+});
+
+const fustat = Fustat({
+  variable: "--font-fustat",
+  subsets: ["latin"],
+  weight: ["600"],
 });
 
 const gabarito = Gabarito({
@@ -27,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${dmSans.variable} ${gabarito.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${dmSans.variable} ${gabarito.variable} ${fustat.variable}`} suppressHydrationWarning>
       <body suppressHydrationWarning>
         <Navbar />
         {children}

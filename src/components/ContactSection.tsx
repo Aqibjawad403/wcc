@@ -2,6 +2,7 @@
 
 import { Box, Container, Typography, Grid, TextField, Button, Stack } from "@mui/material";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaClock } from "react-icons/fa";
+import BlobButton from "./BlobButton";
 
 export default function ContactSection() {
   const deepBlue = '#00008b';
@@ -50,8 +51,8 @@ export default function ContactSection() {
   return (
     <Box sx={{ py: 10, bgcolor: '#fff' }}>
       <Container maxWidth="xl">
-        <Box sx={{ 
-          display: 'flex', 
+        <Box sx={{
+          display: 'flex',
           flexDirection: { xs: 'column', md: 'row' },
           borderRadius: '20px',
           overflow: 'hidden',
@@ -59,29 +60,29 @@ export default function ContactSection() {
           border: '1px solid #eee'
         }}>
           {/* Left Side: Form */}
-          <Box sx={{ 
-            flex: { md: 1.5 }, 
-            bgcolor: deepBlue, 
+          <Box sx={{
+            flex: { md: 1.5 },
+            bgcolor: deepBlue,
             p: { xs: 4, md: 6 },
             color: '#fff'
           }}>
-            <Typography variant="h3" sx={{ 
-              fontWeight: 800, 
-              mb: 5, 
+            <Typography variant="h3" sx={{
+              fontWeight: 800,
+              mb: 5,
               fontFamily: 'var(--font-heading)',
               position: 'relative',
               display: 'inline-block'
             }}>
               Send Us a <Box component="span" sx={{ position: 'relative', zIndex: 1 }}>
                 Message
-                <Box component="svg" viewBox="0 0 200 20" sx={{ 
-                  position: 'absolute', 
-                  bottom: -15, 
-                  left: 0, 
-                  width: '100%', 
-                  zIndex: -1 
+                <Box component="svg" viewBox="0 0 200 20" sx={{
+                  position: 'absolute',
+                  bottom: -15,
+                  left: 0,
+                  width: '100%',
+                  zIndex: -1
                 }}>
-                  <path d="M0,10 C50,0 150,20 200,10" fill="none" stroke={greenColor} strokeWidth="4" />
+                  <path d="M0,10 C50,0 150,20 200,10" fill="none" stroke={greenColor} strokeWidth="5" strokeLinecap="round" style={{ vectorEffect: 'non-scaling-stroke' }} />
                 </Box>
               </Box>
             </Typography>
@@ -89,142 +90,131 @@ export default function ContactSection() {
             <Grid container spacing={3}>
               <Grid size={{ xs: 12, sm: 6 }}>
                 <Typography sx={{ mb: 1, fontWeight: 500, color: '#fff' }}>First Name</Typography>
-                <TextField 
-                  fullWidth 
-                  placeholder="First Name" 
-                  variant="outlined" 
-                  sx={{ 
-                    bgcolor: '#fff', 
+                <TextField
+                  fullWidth
+                  placeholder="First Name"
+                  variant="outlined"
+                  sx={{
+                    bgcolor: '#fff',
                     borderRadius: '8px',
                     '& .MuiOutlinedInput-root': { height: '50px' }
-                  }} 
+                  }}
                 />
               </Grid>
               <Grid size={{ xs: 12, sm: 6 }}>
                 <Typography sx={{ mb: 1, fontWeight: 500, color: '#fff' }}>Second Name</Typography>
-                <TextField 
-                  fullWidth 
-                  placeholder="Second Name" 
-                  variant="outlined" 
-                  sx={{ 
-                    bgcolor: '#fff', 
+                <TextField
+                  fullWidth
+                  placeholder="Second Name"
+                  variant="outlined"
+                  sx={{
+                    bgcolor: '#fff',
                     borderRadius: '8px',
                     '& .MuiOutlinedInput-root': { height: '50px' }
-                  }} 
+                  }}
                 />
               </Grid>
               <Grid size={{ xs: 12, sm: 6 }}>
                 <Typography sx={{ mb: 1, fontWeight: 500, color: '#fff' }}>Your E-mail</Typography>
-                <TextField 
-                  fullWidth 
-                  placeholder="Your E-mail" 
-                  variant="outlined" 
-                  sx={{ 
-                    bgcolor: '#fff', 
+                <TextField
+                  fullWidth
+                  placeholder="Your E-mail"
+                  variant="outlined"
+                  sx={{
+                    bgcolor: '#fff',
                     borderRadius: '8px',
                     '& .MuiOutlinedInput-root': { height: '50px' }
-                  }} 
+                  }}
                 />
               </Grid>
               <Grid size={{ xs: 12, sm: 6 }}>
                 <Typography sx={{ mb: 1, fontWeight: 500, color: '#fff' }}>Phone Number</Typography>
-                <TextField 
-                  fullWidth 
-                  placeholder="Phone number" 
-                  variant="outlined" 
-                  sx={{ 
-                    bgcolor: '#fff', 
+                <TextField
+                  fullWidth
+                  placeholder="Phone number"
+                  variant="outlined"
+                  sx={{
+                    bgcolor: '#fff',
                     borderRadius: '8px',
                     '& .MuiOutlinedInput-root': { height: '50px' }
-                  }} 
+                  }}
                 />
               </Grid>
               <Grid size={{ xs: 12, sm: 6 }}>
                 <Typography sx={{ mb: 1, fontWeight: 500, color: '#fff' }}>Field of Interest</Typography>
-                <TextField 
-                  fullWidth 
-                  placeholder="Write a Field" 
-                  variant="outlined" 
-                  sx={{ 
-                    bgcolor: '#fff', 
+                <TextField
+                  fullWidth
+                  placeholder="Write a Field"
+                  variant="outlined"
+                  sx={{
+                    bgcolor: '#fff',
                     borderRadius: '8px',
                     '& .MuiOutlinedInput-root': { height: '50px' }
-                  }} 
+                  }}
                 />
               </Grid>
               <Grid size={{ xs: 12, sm: 6 }}>
                 <Typography sx={{ mb: 1, fontWeight: 500, color: '#fff' }}>Where you want to Go!</Typography>
-                <TextField 
-                  fullWidth 
-                  placeholder="Add Country" 
-                  variant="outlined" 
-                  sx={{ 
-                    bgcolor: '#fff', 
+                <TextField
+                  fullWidth
+                  placeholder="Add Country"
+                  variant="outlined"
+                  sx={{
+                    bgcolor: '#fff',
                     borderRadius: '8px',
                     '& .MuiOutlinedInput-root': { height: '50px' }
-                  }} 
+                  }}
                 />
               </Grid>
               <Grid size={{ xs: 12 }}>
                 <Typography sx={{ mb: 1, fontWeight: 500, color: '#fff' }}>Message</Typography>
-                <TextField 
-                  fullWidth 
-                  multiline 
-                  rows={4} 
-                  placeholder="Write your message..." 
-                  variant="outlined" 
-                  sx={{ 
-                    bgcolor: '#fff', 
+                <TextField
+                  fullWidth
+                  multiline
+                  rows={4}
+                  placeholder="Write your message..."
+                  variant="outlined"
+                  sx={{
+                    bgcolor: '#fff',
                     borderRadius: '8px'
-                  }} 
+                  }}
                 />
               </Grid>
-              <Grid size={{ xs: 12 }}>
-                <Button variant="contained" sx={{ 
-                  bgcolor: greenColor, 
-                  color: '#fff', 
-                  px: 5, 
-                  py: 1.5, 
-                  borderRadius: '8px',
-                  fontWeight: 800,
-                  textTransform: 'none',
-                  fontSize: '16px',
-                  boxShadow: 'none',
-                  '&:hover': { bgcolor: '#05a805' }
-                }}>
+              <Grid size={{ xs: 4 }}>
+                <BlobButton variant="solid" type="submit" fullWidth>
                   Send Message
-                </Button>
+                </BlobButton>
               </Grid>
             </Grid>
           </Box>
 
           {/* Right Side: Contact Info */}
-          <Box sx={{ 
-            flex: 1, 
-            bgcolor: '#fff', 
+          <Box sx={{
+            flex: 1,
+            bgcolor: '#fff',
             p: { xs: 4, md: 6 },
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center'
           }}>
-            <Typography variant="h3" sx={{ 
-              fontWeight: 800, 
-              mb: 1, 
-              color: '#1a1a1a', 
+            <Typography variant="h3" sx={{
+              fontWeight: 800,
+              mb: 1,
+              color: '#1a1a1a',
               fontFamily: 'var(--font-heading)',
               position: 'relative',
               display: 'inline-block'
             }}>
               Contact <Box component="span" sx={{ position: 'relative', zIndex: 1 }}>
                 Information
-                <Box component="svg" viewBox="0 0 200 20" sx={{ 
-                  position: 'absolute', 
-                  bottom: -15, 
-                  left: 0, 
-                  width: '100%', 
-                  zIndex: -1 
+                <Box component="svg" viewBox="0 0 200 20" sx={{
+                  position: 'absolute',
+                  bottom: -15,
+                  left: 0,
+                  width: '100%',
+                  zIndex: -1
                 }}>
-                  <path d="M0,10 C50,20 150,0 200,10" fill="none" stroke={greenColor} strokeWidth="4" />
+                  <path d="M0,10 C50,20 150,0 200,10" fill="none" stroke={greenColor} strokeWidth="5" strokeLinecap="round" style={{ vectorEffect: 'non-scaling-stroke' }} />
                 </Box>
               </Box>
             </Typography>
@@ -234,9 +224,9 @@ export default function ContactSection() {
 
             <Stack spacing={2.5}>
               {infoItems.map((item, index) => (
-                <Box key={index} sx={{ 
-                  bgcolor: item.color, 
-                  p: 2.5, 
+                <Box key={index} sx={{
+                  bgcolor: item.color,
+                  p: 2.5,
                   borderRadius: '12px',
                   display: 'flex',
                   alignItems: 'center',
@@ -250,8 +240,8 @@ export default function ContactSection() {
                     '& .icon-circle': { bgcolor: '#fff', color: deepBlue }
                   }
                 }}>
-                  <Box className="icon-circle" sx={{ 
-                    bgcolor: item.iconBg, 
+                  <Box className="icon-circle" sx={{
+                    bgcolor: item.iconBg,
                     color: item.iconColor,
                     width: '50px',
                     height: '50px',
@@ -266,9 +256,9 @@ export default function ContactSection() {
                     {item.icon}
                   </Box>
                   <Box>
-                    <Typography className="info-title" variant="h6" sx={{ 
-                      fontWeight: 700, 
-                      color: item.textColor, 
+                    <Typography className="info-title" variant="h6" sx={{
+                      fontWeight: 700,
+                      color: item.textColor,
                       fontFamily: 'var(--font-heading)',
                       fontSize: '18px',
                       lineHeight: 1.2,
@@ -276,10 +266,10 @@ export default function ContactSection() {
                     }}>
                       {item.title}
                     </Typography>
-                    <Typography className="info-value" variant="body2" sx={{ 
-                      color: item.textColor, 
-                      opacity: 0.9,
+                    <Typography className="info-value" variant="body2" sx={{
+                      color: item.textColor,
                       fontFamily: 'var(--font-sans)',
+                      fontSize: '18px',
                       mt: 0.5,
                       lineHeight: 1.4,
                       transition: 'all 0.3s ease'

@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { MdOutlineWatchLater, MdLocationOn } from "react-icons/md";
 import { Container } from "@mui/material";
 
 import { usePathname } from "next/navigation";
@@ -31,10 +30,10 @@ export default function Navbar() {
   };
 
   return (
-    <header style={{ height: "90px", position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100 }}>
+    <header style={{ height: "140px", position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100 }}>
       {/* Top Bar */}
       <div className="top-bar">
-        <Container maxWidth="xl" sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <Container maxWidth="xl" sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '100%' }}>
           {/* Social Icons - Left Side */}
           <div className="social-icons">
             {socialLinks.map((social) => (
@@ -45,12 +44,40 @@ export default function Navbar() {
           {/* Info - Right Side */}
           <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
             <div className="info-item">
-              <MdOutlineWatchLater style={{ fontSize: '16px' }} />
+              <div
+                style={{
+                  width: '18px',
+                  height: '18px',
+                  backgroundColor: 'currentColor',
+                  WebkitMaskImage: 'url("/social icons/schedule.svg")',
+                  maskImage: 'url("/social icons/schedule.svg")',
+                  WebkitMaskSize: 'contain',
+                  maskSize: 'contain',
+                  WebkitMaskRepeat: 'no-repeat',
+                  maskRepeat: 'no-repeat',
+                  WebkitMaskPosition: 'center',
+                  maskPosition: 'center'
+                }}
+              />
               Mon-Sat: 10am - 7pm, Pakistan
             </div>
             <div style={{ width: '1px', height: '14px', background: '#ccc' }}></div>
             <div className="info-item">
-              <MdLocationOn style={{ fontSize: '16px' }} />
+              <div
+                style={{
+                  width: '18px',
+                  height: '18px',
+                  backgroundColor: 'currentColor',
+                  WebkitMaskImage: 'url("/social icons/distance.svg")',
+                  maskImage: 'url("/social icons/distance.svg")',
+                  WebkitMaskSize: 'contain',
+                  maskSize: 'contain',
+                  WebkitMaskRepeat: 'no-repeat',
+                  maskRepeat: 'no-repeat',
+                  WebkitMaskPosition: 'center',
+                  maskPosition: 'center'
+                }}
+              />
               1st Floor, 57 Quaid Block near Imtiaz Mega Mall Bahria Town, Lahore.
             </div>
           </div>
@@ -59,8 +86,8 @@ export default function Navbar() {
 
       {/* Main Header */}
       <div className="main-header">
-        <Container maxWidth="xl">
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <Container maxWidth="xl" sx={{ height: '100%' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '100%' }}>
             {/* Logo */}
             <Link href="/" className="logo-container">
               <Image
@@ -126,8 +153,8 @@ function SocialIcon({ src, alt, url }: { src: string; alt: string; url: string }
       <div
         className="icon-mask"
         style={{
-          width: '18px',
-          height: '18px',
+          width: '20px',
+          height: '20px',
           backgroundColor: 'currentColor',
           WebkitMaskImage: `url("${src}")`,
           maskImage: `url("${src}")`,

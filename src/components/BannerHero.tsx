@@ -1,7 +1,7 @@
 "use client";
 
 import { Container, Grid, Typography, Button, TextField, Box } from "@mui/material";
-import { FaArrowRight } from "react-icons/fa";
+import BlobButton from "./BlobButton";
 
 export default function BannerHero() {
   return (
@@ -23,17 +23,34 @@ export default function BannerHero() {
               color: '#fff',
               mb: 2,
               fontWeight: 800,
-              fontSize: { xs: '38px', md: '58px' }, // Responsive font size
+              fontSize: { xs: '38px', md: '58px' },
               lineHeight: 1.2,
-              fontFamily: 'var(--font-heading)'
+              fontFamily: 'var(--font-heading)',
+              maxWidth: '800px'
             }}>
-              Best Study Abroad Consultant in Lahore for <span style={{ textDecoration: 'underline', textDecorationColor: '#06C106', textDecorationThickness: '4px' }}>Pakistani Students Trusted</span>
+              Best Study Abroad<br />
+              Consultant in Lahore for<br />
+              <Box component="span" sx={{
+                position: 'relative',
+                display: 'inline-block',
+                '&::after': {
+                  content: '""',
+                  position: 'absolute',
+                  left: 0,
+                  bottom: '5px',
+                  width: '100%',
+                  height: '6px',
+                  bgcolor: '#06C106',
+                  borderRadius: '10px'
+                }
+              }}>
+                Pakistani Students Trusted
+              </Box>
             </Typography>
             <Typography variant="body1" sx={{
               mb: 4,
-              opacity: 0.9,
               fontSize: '18px',
-              maxWidth: '600px',
+              maxWidth: '800px',
               color: 'white',
               fontFamily: 'var(--font-sans)'
             }}>
@@ -41,43 +58,26 @@ export default function BannerHero() {
               with transparent advice on admissions, visas, scholarships, and career-focused planning.
             </Typography>
             <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
-              <Button variant="contained" sx={{
-                bgcolor: '#06C106',
-                color: '#fff',
-                px: 4,
-                py: 1.5,
-                borderRadius: '8px',
-                fontWeight: 700,
-                textTransform: 'none',
-                '&:hover': { bgcolor: '#05a805' }
-              }}>
+              <BlobButton color="#06C106">
                 Talk With Our Experts
-              </Button>
-              <Button variant="outlined" sx={{
-                color: '#03038C',
-                borderColor: '#fff',
-                bgcolor: "white",
-                px: 4,
-                py: 1.5,
-                borderRadius: '8px',
-                fontWeight: 700,
-                textTransform: 'none',
-                gap: 1,
-              }}>
-                Explore Services <img src="/arrow.svg" />
-              </Button>
+              </BlobButton>
+              <BlobButton color="#03038C">
+                Explore Services <img src="/arrow.svg" alt="arrow" />
+              </BlobButton>
             </Box>
           </Grid>
 
           {/* Right Side: Form */}
-          <Grid size={{ xs: 12, md: 5 }}>
+          <Grid size={{ xs: 12, md: 5 }} sx={{ display: 'flex', justifyContent: { md: 'flex-end' } }}>
             <Box sx={{
-              background: 'rgba(255, 255, 255, 0.1)',
-              backdropFilter: 'blur(10px)',
+              width: { xs: '100%', md: '500px' },
+              background: 'rgba(0, 0, 0, 0.3)',
+              backdropFilter: 'blur(30px)',
               p: 4,
               borderRadius: '16px',
-              border: '1px solid rgba(255, 255, 255, 0.2)',
+              border: '1px solid white',
               boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.37)'
+
             }}>
               <Typography variant="h5" sx={{
                 mb: 3,
@@ -91,27 +91,79 @@ export default function BannerHero() {
               </Typography>
               <Grid container spacing={2}>
                 <Grid size={{ xs: 12 }}>
-                  <TextField fullWidth placeholder="Your Name" variant="outlined" size="small" sx={{ bgcolor: '#fff', borderRadius: '4px' }} />
+                  <TextField
+                    fullWidth
+                    placeholder="Your Name"
+                    variant="outlined"
+                    size="small"
+                    sx={{
+                      bgcolor: '#fff',
+                      borderRadius: '6px',
+                      '& .MuiInputBase-input': { fontFamily: 'var(--font-sans)', fontSize: '16px' },
+                      '& .MuiInputBase-input::placeholder': { fontFamily: 'var(--font-sans)', fontSize: '16px', opacity: 0.5 }
+                    }}
+                  />
                 </Grid>
                 <Grid size={{ xs: 12 }}>
-                  <TextField fullWidth placeholder="Your E-mail" variant="outlined" size="small" sx={{ bgcolor: '#fff', borderRadius: '4px' }} />
+                  <TextField
+                    fullWidth
+                    placeholder="Mobile Number"
+                    variant="outlined"
+                    size="small"
+                    sx={{
+                      bgcolor: '#fff',
+                      borderRadius: '6px',
+                      '& .MuiInputBase-input': { fontFamily: 'var(--font-sans)', fontSize: '16px' },
+                      '& .MuiInputBase-input::placeholder': { fontFamily: 'var(--font-sans)', fontSize: '16px', opacity: 0.5 }
+                    }}
+                  />
                 </Grid>
                 <Grid size={{ xs: 12 }}>
-                  <TextField fullWidth placeholder="Field of Interest" variant="outlined" size="small" sx={{ bgcolor: '#fff', borderRadius: '4px' }} />
+                  <TextField
+                    fullWidth
+                    placeholder="Your E-mail"
+                    variant="outlined"
+                    size="small"
+                    sx={{
+                      bgcolor: '#fff',
+                      borderRadius: '6px',
+                      '& .MuiInputBase-input': { fontFamily: 'var(--font-sans)', fontSize: '16px' },
+                      '& .MuiInputBase-input::placeholder': { fontFamily: 'var(--font-sans)', fontSize: '16px', opacity: 0.5 }
+                    }}
+                  />
                 </Grid>
                 <Grid size={{ xs: 12 }}>
-                  <TextField fullWidth placeholder="Where you want to Go!" variant="outlined" size="small" sx={{ bgcolor: '#fff', borderRadius: '4px' }} />
+                  <TextField
+                    fullWidth
+                    placeholder="Field of Interest"
+                    variant="outlined"
+                    size="small"
+                    sx={{
+                      bgcolor: '#fff',
+                      borderRadius: '6px',
+                      '& .MuiInputBase-input': { fontFamily: 'var(--font-sans)', fontSize: '16px' },
+                      '& .MuiInputBase-input::placeholder': { fontFamily: 'var(--font-sans)', fontSize: '16px', opacity: 0.5 }
+                    }}
+                  />
                 </Grid>
                 <Grid size={{ xs: 12 }}>
-                  <Button fullWidth variant="contained" sx={{
-                    bgcolor: '#06C106',
-                    py: 1.5,
-                    fontWeight: 700,
-                    textTransform: 'none',
-                    '&:hover': { bgcolor: '#05a805' }
-                  }}>
+                  <TextField
+                    fullWidth
+                    placeholder="Where you want to Go!"
+                    variant="outlined"
+                    size="small"
+                    sx={{
+                      bgcolor: '#fff',
+                      borderRadius: '6px',
+                      '& .MuiInputBase-input': { fontFamily: 'var(--font-sans)', fontSize: '16px' },
+                      '& .MuiInputBase-input::placeholder': { fontFamily: 'var(--font-sans)', fontSize: '16px', opacity: 0.5 }
+                    }}
+                  />
+                </Grid>
+                <Grid size={{ xs: 12 }}>
+                  <BlobButton color="#06C106" fullWidth variant="solid">
                     Submit
-                  </Button>
+                  </BlobButton>
                 </Grid>
               </Grid>
             </Box>

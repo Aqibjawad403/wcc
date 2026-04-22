@@ -1,15 +1,16 @@
 "use client";
 
-import { Box, Container, Typography, Grid, Button } from "@mui/material";
+import { Box, Container, Typography, Grid } from "@mui/material";
 import Image from "next/image";
+import BlobButton from "./BlobButton";
 
 const countries = [
-  { name: "United Kingdom", flagCode: "gb" },
-  { name: "USA", flagCode: "us" },
-  { name: "Canada", flagCode: "ca" },
+  { name: "United Kingdom (UK)", flagCode: "gb" },
+  { name: "United State of America (USA)", flagCode: "us" },
+  { name: "Canada (CA)", flagCode: "ca" },
   { name: "Australia", flagCode: "au" },
-  { name: "Cyprus", flagCode: "cy" },
-  { name: "North Cyprus", flagCode: "cy" },
+  { name: "Ireland", flagCode: "ie" },
+  { name: "New Zealand", flagCode: "nz" },
   { name: "Germany", flagCode: "de" },
   { name: "Malta", flagCode: "mt" },
 ];
@@ -24,7 +25,7 @@ export default function TopDestinations() {
   const greenColor = '#06C106';
 
   return (
-    <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: '#F5F7FF' }}>
+    <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: '#F3F3FF' }}>
       <Container maxWidth="xl">
         <Box sx={{ textAlign: 'center', mb: 8 }}>
           <Typography variant="h2" sx={{
@@ -54,7 +55,7 @@ export default function TopDestinations() {
             color: '#666',
             fontSize: '16px',
             lineHeight: 1.6,
-            maxWidth: '850px',
+            maxWidth: '950px',
             mx: 'auto',
             fontFamily: 'var(--font-sans)',
             mb: 6
@@ -87,9 +88,9 @@ export default function TopDestinations() {
                     backgroundPosition: 'center'
                   }}
                 />
-                
+
                 {/* Overlay - Rectangle Layer */}
-                <Box 
+                <Box
                   className="destination-overlay"
                   sx={{
                     position: 'absolute',
@@ -104,29 +105,28 @@ export default function TopDestinations() {
                     transition: 'background-color 0.3s'
                   }}
                 >
-                  <Box sx={{ 
-                    display: 'flex', 
-                    alignItems: 'center', 
+                  <Box sx={{
+                    display: 'flex',
+                    alignItems: 'center',
                     justifyContent: 'space-between',
-                    width: '100%' 
+                    width: '100%'
                   }}>
-                    <Typography sx={{ 
-                      color: '#fff', 
-                      fontWeight: 700, 
+                    <Typography sx={{
+                      color: '#fff',
+                      fontWeight: 700,
                       fontSize: '16px',
                       textShadow: '0 2px 4px rgba(0,0,0,0.3)'
                     }}>
                       {city.name}
                     </Typography>
-                    <Box sx={{ 
-                      width: '32px', 
-                      height: '20px', 
-                      borderRadius: '4px', 
+                    <Box sx={{
+                      width: '32px',
+                      height: '20px',
                       overflow: 'hidden',
                       boxShadow: '0 2px 4px rgba(0,0,0,0.2)'
                     }}>
-                      <img 
-                        src={city.flag} 
+                      <img
+                        src={city.flag}
                         alt={`${city.name} flag`}
                         style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                       />
@@ -138,20 +138,20 @@ export default function TopDestinations() {
           ))}
         </Grid>
 
-        <Box sx={{ textAlign: 'center', mt: 6 }}>
-          <Button variant="contained" sx={{
-            bgcolor: greenColor,
-            color: '#fff',
-            px: 6,
-            py: 1.5,
-            borderRadius: '8px',
-            fontWeight: 500,
-            fontSize: '16px',
-            textTransform: 'none',
-            '&:hover': { bgcolor: '#05a805' }
-          }}>
+        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 6 }}>
+          <BlobButton
+            variant="outline"
+            color={greenColor}
+            textColor={greenColor}
+            style={{
+              width: '200px',
+              fontFamily: 'var(--font-sans)',
+              fontWeight: 600,
+              fontSize: '18px'
+            }}
+          >
             View More
-          </Button>
+          </BlobButton>
         </Box>
       </Container>
     </Box>

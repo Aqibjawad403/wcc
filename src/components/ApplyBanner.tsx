@@ -1,24 +1,25 @@
 "use client";
 
-import { Box, Container, Typography, Button, Grid } from "@mui/material";
+import { Box, Container, Typography, Grid } from "@mui/material";
 import Image from "next/image";
+import BlobButton from "./BlobButton";
 
 export default function ApplyBanner() {
   const deepBlue = '#00008b';
 
   return (
     <Box sx={{ py: { xs: 8, md: 15 }, bgcolor: '#fff', position: 'relative', overflow: 'hidden', minHeight: '700px' }}>
-      {/* Blue Background Plate - Fixed dimensions as per user request */}
+      {/* Blue Background Plate - Dynamic width for high resolutions */}
       <Box sx={{
         position: 'absolute',
         top: '50%',
         left: 0,
         transform: 'translateY(-50%)',
-        width: { xs: '100%', md: '850px' },
-        height: { xs: 'auto', md: '560px' },
+        width: { xs: '100%', md: 'calc(50vw + 200px)' },
+        height: { xs: '100%', md: '560px' },
         bgcolor: deepBlue,
-        borderTopRightRadius: '15px',
-        borderBottomRightRadius: '15px',
+        borderTopRightRadius: { xs: 0, md: '15px' },
+        borderBottomRightRadius: { xs: 0, md: '15px' },
         zIndex: 0,
         backgroundImage: `url("/bgImage.svg")`,
         backgroundSize: 'cover',
@@ -26,42 +27,22 @@ export default function ApplyBanner() {
       }} />
 
       <Container maxWidth="xl" sx={{ position: 'relative', zIndex: 1, minHeight: '560px', display: 'flex', alignItems: 'center' }}>
-        {/* Absolute Image - Specific positioning as per user request */}
-        <Box sx={{
-          position: 'absolute',
-          left: { md: '800px' },
-          top: '50%',
-          transform: 'translateY(-50%)',
-          width: { xs: '100%', md: '700px' },
-          height: { xs: '350px', md: '400px' },
-          borderRadius: '15px',
-          overflow: 'hidden',
-          backgroundColor: '#fff',
-          display: { xs: 'none', md: 'block' },
-          zIndex: 2
-        }}>
-          <img
-            src="/uk degree.svg"
-            alt="UK London Skyline"
-            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-          />
-        </Box>
-
-        <Grid container alignItems="center">
+        <Grid container alignItems="center" spacing={4} sx={{ width: '100%', m: 0 }}>
           {/* Left Content */}
           <Grid size={{ xs: 12, md: 7 }}>
             <Box sx={{
               color: '#fff',
               maxWidth: '850px',
-              pl: { md: 8 }, // Added left padding for better spacing
-              py: { xs: 4, md: 8 }, // Added vertical padding
+              pl: { md: 4, lg: 8 },
+              pr: { md: 2, lg: 4 },
+              py: { xs: 6, md: 8 },
               display: 'flex',
               flexDirection: 'column',
               gap: 3
             }}>
               <Typography variant="h2" sx={{
                 fontWeight: 600,
-                fontSize: { xs: '32px', md: '48px' }, // Slightly adjusted for better fit
+                fontSize: { xs: '32px', md: '48px' },
                 fontFamily: 'var(--font-heading)',
                 lineHeight: 1.1,
                 color: '#fff'
@@ -69,11 +50,15 @@ export default function ApplyBanner() {
                 A UK degree that opens global doors.
               </Typography>
               <Typography variant="body1" sx={{
-                color: 'rgba(255, 255, 255, 0.95)', // Increased visibility
-                fontSize: '16px',
+                color: 'rgba(255, 255, 255, 0.95)',
+                fontSize: { xs: '14px', sm: '16px', lg: '18px', xl: '18px' },
                 lineHeight: 1.8,
                 fontFamily: 'var(--font-sans)',
-                maxWidth: '750px'
+                maxWidth: '750px',
+                transition: 'color 0.3s ease',
+                "&:hover": {
+                  color: "#06C106",
+                },
               }}>
                 We guide Pakistani students to cheap universities in uk for international students,
                 offering affordable tuition, recognised degrees, visa support, scholarships,
@@ -81,22 +66,31 @@ export default function ApplyBanner() {
                 and global opportunities for worldwide success.
               </Typography>
               <Box sx={{ mt: 2 }}>
-                <Button variant="contained" sx={{
-                  bgcolor: '#fff',
-                  color: deepBlue,
-                  px: 5,
-                  py: 1.8,
-                  borderRadius: '12px',
-                  fontWeight: 400,
-                  textTransform: 'none',
-                  fontSize: '16px',
-                  boxShadow: '0 10px 20px rgba(0,0,0,0.2)',
-                  '&:hover': { bgcolor: '#f5f5f5', transform: 'translateY(-2px)' },
-                  transition: 'all 0.3s'
-                }}>
-                  Talk with our experts
-                </Button>
+                <BlobButton color="#06C106" variant="solid">
+                  Talk With Our Experts
+                </BlobButton>
               </Box>
+            </Box>
+          </Grid>
+
+          {/* Right Image */}
+          <Grid size={{ xs: 12, md: 5 }} sx={{ display: { xs: 'none', md: 'block' } }}>
+            <Box sx={{
+              width: '100%',
+              height: { xs: '350px', md: '400px' },
+              borderTopRightRadius: '15px',
+              borderBottomRightRadius: '15px',
+              overflow: 'hidden',
+              backgroundColor: '#fff',
+              zIndex: 2,
+              position: 'relative',
+              boxShadow: '0 20px 40px rgba(0,0,0,0.1)'
+            }}>
+              <img
+                src="/uk degree.svg"
+                alt="UK London Skyline"
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              />
             </Box>
           </Grid>
         </Grid>

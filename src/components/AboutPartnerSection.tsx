@@ -1,8 +1,10 @@
 "use client";
 
-import { Box, Container, Typography, Grid, Button, Link } from "@mui/material";
+import { Box, Container, Typography, Grid, Button } from "@mui/material";
+import Link from "next/link";
 import { FaCheckCircle } from "react-icons/fa";
 import Image from "next/image";
+import BlobButton from "./BlobButton";
 
 export default function AboutPartnerSection({ reverse = false }: { reverse?: boolean }) {
   const deepBlue = '#03038C';
@@ -39,14 +41,22 @@ export default function AboutPartnerSection({ reverse = false }: { reverse?: boo
 
             <Typography variant="body1" sx={{
               color: '#555',
-              fontSize: '16px',
-              mb: 4,
+              fontSize: '18px',
+              mb: 2,
               fontFamily: 'var(--font-sans)',
             }}>
               World Citizen Consultants proudly stands as your partner in global education,
               supporting Pakistani students at every stage of their study abroad journey.
               As an International Student Visa Consultant in Bahria Town Lahore, we focus on
               informed counseling, realistic options, and long-term academic value.
+            </Typography>
+
+            <Typography variant="body1" sx={{
+              color: '#555',
+              fontSize: '18px',
+              mb: 4,
+              fontFamily: 'var(--font-sans)',
+            }}>
               From selecting reputable universities to preparing strong visa files,
               our approach is structured and student-centric. Families trust us for
               clarity, ethical guidance, and consistent follow-up. Choosing an
@@ -76,43 +86,21 @@ export default function AboutPartnerSection({ reverse = false }: { reverse?: boo
               ))}
             </Box>
 
-            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
-              <Button
-                component={Link}
-                href="/about"
-                variant="contained" sx={{
-                  bgcolor: greenColor,
-                  color: '#fff',
-                  px: 5,
-                  py: 1.8,
-                  borderRadius: '8px',
-                  fontWeight: 700,
-                  fontSize: '16px',
-                  textTransform: 'none',
-                  textDecoration: 'none',
-                  '&:hover': { bgcolor: '#05a805' }
-                }}>
-                View More
-              </Button>
-              <Button variant="contained" sx={{
-                bgcolor: deepBlue,
-                color: '#fff',
-                px: 5,
-                py: 1.8,
-                borderRadius: '8px',
-                fontWeight: 700,
-                fontSize: '16px',
-                textTransform: 'none',
-                '&:hover': { bgcolor: '#02026b' }
-              }}>
+            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 4, mt: 2 }}>
+              <Link href="/about" style={{ textDecoration: 'none' }}>
+                <BlobButton variant="solid" color={greenColor} style={{ width: '180px' }}>
+                  View More
+                </BlobButton>
+              </Link>
+              <BlobButton variant="solid" color={deepBlue} style={{ width: '180px' }}>
                 Call Now
-              </Button>
+              </BlobButton>
             </Box>
           </Grid>
 
           {/* Right Side: Images */}
           <Grid size={{ xs: 12, md: 6 }}>
-            <Box sx={{ position: 'relative', height: { xs: '400px', md: '550px' } }}>
+            <Box sx={{ position: 'relative', height: { xs: '450px', md: '650px' } }}>
               {/* Green Box Outline in Background */}
               <Box sx={{
                 position: 'absolute',
